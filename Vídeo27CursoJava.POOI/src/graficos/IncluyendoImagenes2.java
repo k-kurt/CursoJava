@@ -1,0 +1,67 @@
+package graficos;
+
+import java.awt.Graphics;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class IncluyendoImagenes2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		MarcoPrincipal marco1 = new MarcoPrincipal();
+		marco1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+	}
+
+}
+
+class MarcoPrincipal extends JFrame {
+	public MarcoPrincipal() {
+		setTitle("video Numero 62");
+		setVisible(true);
+		// setExtendedState(MAXIMIZED_BOTH);
+		setSize(300, 200);
+		PrimeraLamina lamina = new PrimeraLamina();
+		add(lamina);
+	}
+}
+
+class PrimeraLamina extends JPanel {
+
+	private Image imagen2;
+
+	public PrimeraLamina() {
+		try {
+			imagen2 = ImageIO.read(new File("src\\graficos\\pelotaTenis.png"));
+		} catch (IOException e) {
+			// TODO: handle exception
+			System.out.println("Imagen no encontrada");
+		}
+
+	}
+
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+
+		int alturaImagen = imagen2.getHeight(this);
+		int anchuraImagen = imagen2.getWidth(this);
+
+		g.drawImage(imagen2, 0, 0, null);
+
+		for (int i = 0; i < 300; i++) {
+			for (int j = 0; j < 200; j++) {
+
+				if (i + j > 0) {
+					g.copyArea(0, 0, 360, 360, anchuraImagen * i, alturaImagen * j);
+				}
+			}
+		}
+
+	}
+
+}
