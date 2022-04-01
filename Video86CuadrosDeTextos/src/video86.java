@@ -57,7 +57,23 @@ class LaminaCuadroTexto extends JPanel{
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 		
-			System.out.println(cuadro.getText().trim());//toma lo que hay en cuadro de texto
+			
+			int correcto=0;
+			String email=cuadro.getText().trim();
+			for(int i=0;i<email.length();i++) {
+				if(email.charAt(i)=='@') {
+					correcto++;
+				}
+			}
+			
+			if(correcto!=1) {
+				
+				System.out.println("incorrecto");
+			}else { 
+				System.out.println("email correcto");
+			}
+			
+			//System.out.println(cuadro.getText().trim());//toma lo que hay en cuadro de texto
 			
 			
 		}
