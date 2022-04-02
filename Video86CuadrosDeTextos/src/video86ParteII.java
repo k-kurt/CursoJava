@@ -1,3 +1,5 @@
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -11,9 +13,9 @@ import javax.swing.JTextField;
 public class video86ParteII {
 		public static void main(String[] args) {
 			// TODO Auto-generated method stub
-			marcoCuadroTextoII marco=new marcoCuadroTextoII();
-			marco.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			marco.setVisible(true);
+			marcoCuadroTextoII marco2=new marcoCuadroTextoII();
+			marco2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			marco2.setVisible(true);
 		}
 
 	}
@@ -22,26 +24,31 @@ public class video86ParteII {
 		public marcoCuadroTextoII() {
 			setTitle("video 86");
 			setBounds(50, 50, 800, 500);
-			LaminaCuadroTextoII lamina=new LaminaCuadroTextoII();
-			add(lamina);
+			LaminaCuadroTextoII lamina2=new LaminaCuadroTextoII();
+			add(lamina2);
 			
 		}
 	}
 
 	class LaminaCuadroTextoII extends JPanel{
 		public LaminaCuadroTextoII() {
-			mensaje=new JLabel("el email es...");
-			JLabel text=new JLabel("Ingrese el email");
-			add(text);
+			setLayout(new BorderLayout());
+			JPanel laminaII=new JPanel();
+			laminaII.setLayout(new FlowLayout());
 			cuadro=new JTextField(25);
-			add(cuadro);
+			laminaII.add(cuadro);
 			//System.out.println(cuadro.getText().trim());//quita espacio innecesarios
-			add(mensaje);
+			add(mensaje,BorderLayout.CENTER);
 			boton=new JButton("comprobar");
-			add(boton);
+			laminaII.add(boton);
 			validadEmail email=new validadEmail();
 			boton.addActionListener(email);//ponemos al boton a la escucha del evento click
 			
+			
+			mensaje=new JLabel("el email es...");
+			JLabel text=new JLabel("Ingrese el email");
+			laminaII.add(text);
+			add(laminaII,BorderLayout.NORTH);
 			
 			
 		}
