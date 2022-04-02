@@ -1,3 +1,5 @@
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -22,7 +24,7 @@ class marcoCuadroTexto extends JFrame{
 	public marcoCuadroTexto() {
 		setTitle("video 86");
 		setBounds(50, 50, 800, 500);
-		LaminaCuadroTexto lamina=new LaminaCuadroTexto();
+		LaminaCuadroTextoII lamina=new LaminaCuadroTextoII();
 		add(lamina);
 		
 	}
@@ -30,13 +32,13 @@ class marcoCuadroTexto extends JFrame{
 
 class LaminaCuadroTexto extends JPanel{
 	public LaminaCuadroTexto() {
-		
+		mensaje=new JLabel("el email es...");
 		JLabel text=new JLabel("Ingrese el email");
 		add(text);
 		cuadro=new JTextField(25);
 		add(cuadro);
 		//System.out.println(cuadro.getText().trim());//quita espacio innecesarios
-		
+		add(mensaje);
 		boton=new JButton("comprobar");
 		add(boton);
 		validadEmail email=new validadEmail();
@@ -45,7 +47,7 @@ class LaminaCuadroTexto extends JPanel{
 		
 		
 	}
-
+	private JLabel mensaje;
 	private JTextField cuadro;
 	private JButton boton;
 
@@ -68,9 +70,11 @@ class LaminaCuadroTexto extends JPanel{
 			
 			if(correcto!=1) {
 				
-				System.out.println("incorrecto");
+			mensaje.setText("email Incorrecto");
+			
+				
 			}else { 
-				System.out.println("email correcto");
+				mensaje.setText("email Correcto");
 			}
 			
 			//System.out.println(cuadro.getText().trim());//toma lo que hay en cuadro de texto
@@ -79,5 +83,8 @@ class LaminaCuadroTexto extends JPanel{
 		}
 		
 	}
+	
+
+	
 	
 }
