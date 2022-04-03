@@ -24,7 +24,7 @@ class marcoCuadroTexto extends JFrame{
 	public marcoCuadroTexto() {
 		setTitle("video 86");
 		setBounds(50, 50, 800, 500);
-		LaminaCuadroTextoII lamina=new LaminaCuadroTextoII();
+		LaminaCuadroTexto lamina=new LaminaCuadroTexto();
 		add(lamina);
 		
 	}

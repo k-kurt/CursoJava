@@ -9,87 +9,90 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-
 public class video86ParteII {
-		public static void main(String[] args) {
-			// TODO Auto-generated method stub
-			marcoCuadroTextoII marco2=new marcoCuadroTextoII();
-			marco2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			marco2.setVisible(true);
+	public static void main(String[] args) {
+		MarcoDeCuadroDeText marco2 = new MarcoDeCuadroDeText();
+		marco2.setVisible(true);
+		marco2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+	}
+}
+
+class MarcoDeCuadroDeText extends JFrame {
+	public MarcoDeCuadroDeText() {
+		setTitle("parte 2 del video 87");
+		setBounds(100, 100, 800, 500);
+		LaminaDeCuadroDeText lamina2 = new LaminaDeCuadroDeText();
+		add(lamina2);
+
+	}
+}
+
+class LaminaDeCuadroDeText extends JPanel {
+
+	public LaminaDeCuadroDeText() {
+		
+		setLayout(new BorderLayout());
+		
+		JPanel lamina2Layout=new JPanel();
+		lamina2Layout.setLayout(new FlowLayout());
+		
+		
+		
+		LaminaListener laminaAction=new LaminaListener();
+		
+		
+		
+		ingrese=new JLabel("ingrese el email: ");
+		lamina2Layout.add(ingrese);
+		cuadro2=new JTextField(25);
+		lamina2Layout.add(cuadro2);
+		
+		
+		
+		boton2=new JButton("Verificar");
+		lamina2Layout.add(boton2);
+		boton2.addActionListener(laminaAction);
+		
+		
+		resultado=new JLabel("",JLabel.CENTER);
+		add(resultado,BorderLayout.CENTER);
+
+		
+		add(lamina2Layout,BorderLayout.NORTH);//tenemos que indicar dentro de la lamina que parte ocupara cada una
+		
+		
+	}
+	
+	
+	
+	
+	
+	private class LaminaListener implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			 int correcto=0;
+			 String correo=cuadro2.getText().trim();
+			 for(int i=0;i<correo.length();i++) {
+				 if(correo.charAt(i)=='@') {
+					 correcto++;
+				 }
+			 }
+			 
+			 if(correcto!=1) {
+				 resultado.setText("Email Incorrecto");
+			 }else {
+				 resultado.setText("Email Correcto!");
+			 }
+
 		}
 
 	}
 
-	class marcoCuadroTextoII extends JFrame{
-		public marcoCuadroTextoII() {
-			setTitle("video 86");
-			setBounds(50, 50, 800, 500);
-			LaminaCuadroTextoII lamina2=new LaminaCuadroTextoII();
-			add(lamina2);
-			
-		}
-	}
+	private JButton boton2;
+	private JTextField cuadro2;
+	private JLabel ingrese;
+	private JLabel resultado;
 
-	class LaminaCuadroTextoII extends JPanel{
-		public LaminaCuadroTextoII() {
-			setLayout(new BorderLayout());
-			JPanel laminaII=new JPanel();
-			laminaII.setLayout(new FlowLayout());
-			cuadro=new JTextField(25);
-			laminaII.add(cuadro);
-			//System.out.println(cuadro.getText().trim());//quita espacio innecesarios
-			add(mensaje,BorderLayout.CENTER);
-			boton=new JButton("comprobar");
-			laminaII.add(boton);
-			validadEmail email=new validadEmail();
-			boton.addActionListener(email);//ponemos al boton a la escucha del evento click
-			
-			
-			mensaje=new JLabel("el email es...");
-			JLabel text=new JLabel("Ingrese el email");
-			laminaII.add(text);
-			add(laminaII,BorderLayout.NORTH);
-			
-			
-		}
-		private JLabel mensaje;
-		private JTextField cuadro;
-		private JButton boton;
-
-		private class validadEmail implements ActionListener{
-			public validadEmail() {
-				
-			}
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-			
-				
-				int correcto=0;
-				String email=cuadro.getText().trim();
-				for(int i=0;i<email.length();i++) {
-					if(email.charAt(i)=='@') {
-						correcto++;
-					}
-				}
-				
-				if(correcto!=1) {
-					
-				mensaje.setText("email Incorrecto");
-				
-					
-				}else { 
-					mensaje.setText("email Correcto");
-				}
-				
-				//System.out.println(cuadro.getText().trim());//toma lo que hay en cuadro de texto
-				
-				
-			}
-			
-		}
-		
-
-		
-		
-	}
+}
