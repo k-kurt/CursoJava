@@ -3,13 +3,16 @@
     <fullyQualifiedTypeName name="javax.swing.JFrame"/>
     <fullyQualifiedTypeName name="javax.swing.JPanel"/>
     <fullyQualifiedTypeName name="marcoCuadroTexto"/>
-    <fullyQualifiedTypeName name="LaminaCuadroTexto"/>
     <fullyQualifiedTypeName name="javax.swing.JButton"/>
     <fullyQualifiedTypeName name="javax.swing.JTextField"/>
-    <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
     <fullyQualifiedTypeName name="LaminaCuadroTexto.validadEmail"/>
     <fullyQualifiedTypeName name="javax.swing.JLabel"/>
     <fullyQualifiedTypeName name="java.awt.GridLayout"/>
     <fullyQualifiedTypeName name="java.awt.FlowLayout"/>
+    <fullyQualifiedTypeName name="LaminaCuadroTexto"/>
+    <fullyQualifiedTypeName name="LaminaDeCuadroDeText"/>
+    <fullyQualifiedTypeName name="MarcoDeCuadroDeText"/>
+    <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+    <fullyQualifiedTypeName name="LaminaDeCuadroDeText.LaminaListener"/>
     <fullyQualifiedTypeName name="java.awt.BorderLayout"/>
 </qualifiedTypeNameHistroy>
