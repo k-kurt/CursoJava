@@ -12,7 +12,7 @@ import javax.swing.event.DocumentListener;
 public class video90 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		marcoAreaText marco=new marcoAreaText();
 		marco.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		marco.setVisible(true);
