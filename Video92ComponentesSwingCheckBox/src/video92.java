@@ -76,10 +76,10 @@ class panelPrincipal extends JPanel{
 			
 			int tipo=0;
 			
-			if(check1.isSelected()) tipo+=Font.BOLD;
-			if(check2.isSelected()) tipo+=Font.ITALIC;
+			if(check1.isSelected()) tipo+=Font.BOLD;//juega con los valores enteros que tiene el BOLD
+			if(check2.isSelected()) tipo+=Font.ITALIC;//juega con el valor entero que tiene la ITALIC
 			
-			texto.setFont(new Font("Serif",tipo,24));
+			texto.setFont(new Font("Serif",tipo,24));//toma el tipo en vez de tomar un valor constante
 			
 		}
 		
