@@ -35,8 +35,11 @@ class panelPrincipal extends JPanel{
 		
 		setLayout(new BorderLayout());
 		
-		texto=new JLabel("texto al que voy a modificar");
-		add(texto,BorderLayout.CENTER);
+		texto=new JLabel("texto al que voy a modificar",JLabel.CENTER);//JLabel.CENTER permite poner el JLabel en el centro
+		//si no lo ponemos queda a la izquierda 
+
+		add(texto,BorderLayout.NORTH);
+	
 		
 		JPanel lamina2=new JPanel();
 		//lamina2.setLayout(new GridLayout(1,2));
