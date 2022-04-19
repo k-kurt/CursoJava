@@ -1,5 +1,6 @@
 import java.awt.BorderLayout;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -41,9 +42,26 @@ class Panel94 extends JPanel{
 		add(lamina1,BorderLayout.CENTER);
 		
 		JPanel lamina2=new JPanel();
-		lamina2.setLayout(new BorderLayout());
+		//lamina2.setLayout(new BorderLayout());
+		
+		ButtonGroup grupo1=new ButtonGroup();
+		
+		boton1=new JRadioButton("Negrita",false);
+		grupo1.add(boton1);
+		boton2=new JRadioButton("Mayuscula",false);
+		grupo1.add(boton2);
+		boton3=new JRadioButton("Miniscula",false);
+		grupo1.add(boton3);
+		boton4=new JRadioButton("Cursiva",false);
+		grupo1.add(boton4);
 		
 		
+		lamina2.add(boton1);
+		lamina2.add(boton2);
+		lamina2.add(boton3);
+		lamina2.add(boton4);
+		
+		add(lamina2,BorderLayout.SOUTH);
 		
 	}
 	
