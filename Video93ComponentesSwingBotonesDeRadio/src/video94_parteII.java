@@ -1,6 +1,9 @@
 import java.awt.BorderLayout;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -39,16 +42,38 @@ class panelParte2 extends JPanel{
 		texto=new JLabel("Texto que quiero modificar",JLabel.CENTER);
 		texto.setFont(new Font("Serif",Font.PLAIN,14));
 		add(texto,BorderLayout.CENTER);
-		
+		migrupo=new ButtonGroup();
+		lamina2=new JPanel();
+		add(lamina2,BorderLayout.SOUTH);
+		colocarBotones("pequeña",false,12);
+		colocarBotones("mediano",true,16);
+		colocarBotones("grande",false,20);
+		colocarBotones("muy grande",false,28);
 		
 	}
 	
-	public void colocarBotones(String nombre, boolean seleccionado,int tamanio) {
+	public void colocarBotones(String nombre, boolean seleccionado,final int tamanio) {
 		
+		JRadioButton boton=new JRadioButton(nombre,seleccionado);
 		
+		migrupo.add(boton);
+		lamina2.add(boton);
+		ActionListener mievento=new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				texto.setFont(new Font("Serif",Font.PLAIN,tamanio));
+				
+			}
+			
+		};
+		boton.addActionListener(mievento);
 	}
-	
+	private ButtonGroup migrupo;
 	private JLabel texto;
-	private JRadioButton boton1,boton2,boton3,boton4;
+	
+	JPanel lamina2 =new JPanel();
 }
+
 
