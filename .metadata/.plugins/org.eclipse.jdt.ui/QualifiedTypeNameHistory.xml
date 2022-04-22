@@ -32,12 +32,13 @@
     <fullyQualifiedTypeName name="java.awt.GridLayout"/>
     <fullyQualifiedTypeName name="javax.swing.border.Border"/>
     <fullyQualifiedTypeName name="java.awt.BorderLayout"/>
-    <fullyQualifiedTypeName name="java.awt.Font"/>
-    <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
     <fullyQualifiedTypeName name="javax.swing.JFrame"/>
     <fullyQualifiedTypeName name="javax.swing.JPanel"/>
     <fullyQualifiedTypeName name="laminaPrincipal"/>
     <fullyQualifiedTypeName name="marcoPrincipal"/>
     <fullyQualifiedTypeName name="javax.swing.ButtonGroup"/>
     <fullyQualifiedTypeName name="javax.swing.JRadioButton"/>
+    <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+    <fullyQualifiedTypeName name="Panel94.eventosRadioButton"/>
+    <fullyQualifiedTypeName name="java.awt.Font"/>
 </qualifiedTypeNameHistroy>
