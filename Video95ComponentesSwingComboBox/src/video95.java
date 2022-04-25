@@ -1,7 +1,10 @@
 import java.awt.BorderLayout;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -33,11 +36,35 @@ class panelvideo95 extends JPanel{
 		texto=new JLabel("texto a modificar...",JLabel.CENTER);
 		texto.setFont(new Font("Serif",Font.PLAIN,18));
 		add(texto,BorderLayout.CENTER);
-		JButton boton=new JButton("hola");
-		add(boton,BorderLayout.SOUTH);
+		
+		JPanel lamina2=new JPanel();
+		//lamina2.setLayout(new BorderLayout());
+		opciones =new JComboBox();
+		//opciones.setEditable(true);
+		lamina2.add(opciones,BorderLayout.NORTH);
+		
+		opciones.addItem("serif");
+		opciones.addItem("sans_serif");
+		opciones.addItem("monospaced");
+		opciones.addItem("dialog");
+		
+		eventoscombobox eventos=new eventoscombobox();
+		opciones.addActionListener(eventos);
+		add(lamina2,BorderLayout.NORTH);
 		
 	}
-	private JLabel texto;
+	private class eventoscombobox implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			texto.setFont(new Font((String)opciones.getSelectedItem(),Font.PLAIN,18));
+			
+		}
+		
+	}
 	
+	private JLabel texto;
+	private JComboBox opciones;
 	
 }
