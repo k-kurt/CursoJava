@@ -1,5 +1,10 @@
+import java.awt.BorderLayout;
+import java.awt.Font;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JSlider;
+import javax.swing.SwingConstants;
 
 public class video96 {
 
@@ -24,6 +29,21 @@ class marcoSlider extends JFrame{
 
 class panelSlider extends JPanel{
 	public  panelSlider() {
+		setLayout(new BorderLayout());
+		
+		
+		slider=new JSlider(SwingConstants.VERTICAL,0,100,70);
+		//slider.setOrientation(SwingConstants.HORIZONTAL);
+		slider.setMajorTickSpacing(20);
+		slider.setMinorTickSpacing(10);
+		slider.setPaintTicks(true);
+		slider.setFont(new Font("MONOSPACED",Font.ITALIC,24));
+		slider.setPaintLabels(true);
+		slider.setSnapToTicks(true);
+		
+		add(slider,BorderLayout.WEST);
+		
 		
 	}
+	private JSlider slider;
 }
