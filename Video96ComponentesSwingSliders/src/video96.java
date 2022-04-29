@@ -39,7 +39,7 @@ class panelSlider extends JPanel{
 		slider.setPaintTicks(true);
 		slider.setFont(new Font("MONOSPACED",Font.ITALIC,24));
 		slider.setPaintLabels(true);
-		slider.setSnapToTicks(true);
+		slider.setSnapToTicks(true);//hace que la perilla se mueva al item mas cercano
 		
 		add(slider,BorderLayout.WEST);
 		
