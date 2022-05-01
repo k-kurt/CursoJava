@@ -34,11 +34,31 @@ class panel98 extends JPanel{
 		//String lista[]= {"enero","febrero","marzo","abril"};
 		//String lista[]=GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
 		//spiner=new JSpinner(new SpinnerListModel(lista));
-		spiner=new JSpinner(new SpinnerNumberModel(5, 0, 10, 2));//valor inicial, valor minimo,valor maximo,de cuanto en cuanto
+		/*
+		 * spiner=new JSpinner(new mispiner());//valor inicial, valor minimo,valor
+		 * maximo,de cuanto en cuanto
+		 */
+		spiner=new JSpinner(new SpinnerNumberModel(5,0,10,1) {
+			public Object getNextValue(){ 
+				return super.getPreviousValue(); 
+			} 
+			public Object getPreviousValue() { 
+				return super.getNextValue();
+			}
+			});
 		Dimension d=new Dimension(200,50);
 		spiner.setPreferredSize(d);
 		
 		add(spiner);
 	}
 	private JSpinner spiner;
+	/*
+	 * private class mispiner extends SpinnerNumberModel{ public mispiner() {
+	 * 
+	 * 
+	 * super(5,0,10,1); } public Object getNextValue(){ return
+	 * super.getPreviousValue(); } public Object getPreviousValue() { return
+	 * super.getNextValue();//con el super lo que hacemos es llamar al metodo
+	 * //getNextValue de la clase padre(SpinnerNUmberModel) a la que pertenece } }
+	 */
 }
