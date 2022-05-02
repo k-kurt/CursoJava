@@ -25,6 +25,6 @@ class marcomenu extends JFrame{
 
 class panelmenu extends JPanel{
 	public panelmenu() {
-	
+		
 	}
 }
