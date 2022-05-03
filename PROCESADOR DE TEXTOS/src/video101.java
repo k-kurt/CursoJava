@@ -2,6 +2,7 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 
 import javax.swing.JFrame;
+import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
@@ -36,11 +37,22 @@ class panelPrincipal extends JPanel{
 		JPanel lamina2=new JPanel();
 		//-------------------------------------------------------------
 		menu=new JMenuBar();
-		fuente=new JMenuItem("Fuentes");
-		estilo=new JMenuItem("Estilos");
-		tamanio=new JMenuItem("Tamaño");
+		fuente=new JMenu("Fuentes");
+		estilo=new JMenu("Estilos");
+		tamanio=new JMenu("Tamaño");
 		//-------------------------------------------------------------
-		
+		fuente.add(arial=new JMenuItem("Arial"));
+		fuente.add(courier=new JMenuItem("Courier"));
+		fuente.add(verdana=new JMenuItem("Verdana"));
+		//-------------------------------------------------------------
+		estilo.add(negrita=new JMenuItem("Negrita"));
+		estilo.add(cursiva=new JMenuItem("Cursiva"));
+		//-------------------------------------------------------------
+		tamanio.add(t12 =new JMenuItem("12"));
+		tamanio.add(t16=new JMenuItem("16"));
+		tamanio.add(t20=new JMenuItem("20"));
+		tamanio.add(t24=new JMenuItem("24"));
+		//-------------------------------------------------------------
 		
 		menu.add(fuente);
 		menu.add(estilo);
@@ -51,6 +63,7 @@ class panelPrincipal extends JPanel{
 	}
 	
 	private JMenuBar menu;
-	private JMenuItem fuente,estilo,tamanio,arial,courier,verdana;
+	private JMenuItem arial,courier,verdana,negrita,cursiva,t12,t16,t20,t24;
+	private JMenu fuente,estilo,tamanio;
 	
 }
