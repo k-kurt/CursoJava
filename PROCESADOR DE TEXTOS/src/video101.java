@@ -44,6 +44,71 @@ class panelPrincipal extends JPanel{
 		estilo=new JMenu("Estilos");
 		tamanio=new JMenu("Tamaño");
 		//-------------------------------------------------------------
+		
+		configura_menu("Arial","fuente","",1,1);
+		configura_menu("Courier", "fuente", "", 1, 1);
+		configura_menu("Verdana", "fuente", "", 1, 1);
+		//-------------------------------------------------------------
+
+		configura_menu("Negrita", "estilo", "", 1, 1);
+		configura_menu("Cursiva", "estilo", "", 1, 1);
+		
+		//-------------------------------------------------------------
+		configura_menu("16", "tamanio", "", 1, 16);
+		configura_menu("20", "tamanio", "", 1, 20);
+		configura_menu("24", "tamanio", "", 1, 24);
+		configura_menu("26", "tamanio", "", 1, 26);
+		
+		menu.add(fuente);
+		menu.add(estilo);
+		menu.add(tamanio);
+		lamina2.add(menu);
+		add(lamina2,BorderLayout.NORTH);
+		laminaTexto=new JTextPane();
+		add(laminaTexto,BorderLayout.CENTER);
+	}
+	
+	
+	public void configura_menu(String rotulo,String menu,String tipo_letra,int estilos,int tam) {
+		
+		JMenuItem elemMenu=new JMenuItem(rotulo);
+		if(menu=="fuente") {
+			fuente.add(elemMenu);
+		}else if(menu=="estilo") {
+			estilo.add(elemMenu);
+		}else if(menu=="tamanio") {
+			tamanio.add(elemMenu);
+		}
+		
+		
+	}
+	
+	
+	JTextPane laminaTexto;
+	 JMenuBar menu;
+	 //JMenuItem arial,courier,verdana,negrita,cursiva,t12,t16,t20,t24;
+	 JMenu fuente,estilo,tamanio;
+	 Font letras;
+	}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+/*		
+		
 		fuente.add(arial=new JMenuItem("Arial"));
 		arial.addActionListener(new ActionListener() {
 			
@@ -89,21 +154,16 @@ class panelPrincipal extends JPanel{
 		add(laminaTexto,BorderLayout.CENTER);
 	}
 	
-	/*
-	 * private class eventos implements ActionListener{
-	 * 
-	 * @Override public void actionPerformed(ActionEvent e) { // TODO Auto-generated
-	 * method stub laminaTexto.setFont(new Font("Courier",Font.PLAIN,12));
-	 * 
-	 * 
-	 * }
-	 * 
-	 * }
-	 */
 	
-	private JTextPane laminaTexto;
-	private JMenuBar menu;
-	private JMenuItem arial,courier,verdana,negrita,cursiva,t12,t16,t20,t24;
-	private JMenu fuente,estilo,tamanio;
+	
+	 JTextPane laminaTexto;
+	 JMenuBar menu;
+	 JMenuItem arial,courier,verdana,negrita,cursiva,t12,t16,t20,t24;
+	 JMenu fuente,estilo,tamanio;
 	
 }
+
+*/
+
+
+
