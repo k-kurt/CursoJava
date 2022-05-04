@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="marcoCuadroTexto"/>
-    <fullyQualifiedTypeName name="LaminaCuadroTexto.validadEmail"/>
-    <fullyQualifiedTypeName name="LaminaCuadroTexto"/>
-    <fullyQualifiedTypeName name="LaminaDeCuadroDeText"/>
     <fullyQualifiedTypeName name="MarcoDeCuadroDeText"/>
     <fullyQualifiedTypeName name="LaminaDeCuadroDeText.LaminaListener"/>
     <fullyQualifiedTypeName name="MarcoCuadroTexto"/>
@@ -25,16 +21,13 @@
     <fullyQualifiedTypeName name="marcoLayout"/>
     <fullyQualifiedTypeName name="javax.swing.JTextField"/>
     <fullyQualifiedTypeName name="marcoLayout.laminasMarco"/>
-    <fullyQualifiedTypeName name="panelPrincipal"/>
     <fullyQualifiedTypeName name="javax.swing.JCheckBox"/>
-    <fullyQualifiedTypeName name="java.awt.FlowLayout"/>
     <fullyQualifiedTypeName name="java.awt.GridLayout"/>
     <fullyQualifiedTypeName name="javax.swing.border.Border"/>
     <fullyQualifiedTypeName name="laminaPrincipal"/>
     <fullyQualifiedTypeName name="marcoPrincipal"/>
     <fullyQualifiedTypeName name="javax.swing.ButtonGroup"/>
     <fullyQualifiedTypeName name="javax.swing.JRadioButton"/>
-    <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
     <fullyQualifiedTypeName name="Panel94.eventosRadioButton"/>
     <fullyQualifiedTypeName name="panelSlider"/>
     <fullyQualifiedTypeName name="marcoSlider"/>
@@ -42,12 +35,8 @@
     <fullyQualifiedTypeName name="marco97"/>
     <fullyQualifiedTypeName name="javax.swing.JSlider"/>
     <fullyQualifiedTypeName name="javax.swing.SwingConstants"/>
-    <fullyQualifiedTypeName name="java.awt.Font"/>
     <fullyQualifiedTypeName name="javax.swing.JLabel"/>
     <fullyQualifiedTypeName name="javax.swing.event.ChangeListener"/>
-    <fullyQualifiedTypeName name="java.awt.BorderLayout"/>
-    <fullyQualifiedTypeName name="javax.swing.JFrame"/>
-    <fullyQualifiedTypeName name="javax.swing.JPanel"/>
     <fullyQualifiedTypeName name="javax.swing.JSpinner"/>
     <fullyQualifiedTypeName name="panel98"/>
     <fullyQualifiedTypeName name="javax.swing.SpinnerDateModel"/>
@@ -56,4 +45,19 @@
     <fullyQualifiedTypeName name="java.awt.GraphicsEnvironment"/>
     <fullyQualifiedTypeName name="javax.swing.SpinnerNumberModel"/>
     <fullyQualifiedTypeName name="panel98.mispiner"/>
+    <fullyQualifiedTypeName name="panelmenu"/>
+    <fullyQualifiedTypeName name="marcomenu"/>
+    <fullyQualifiedTypeName name="javax.swing.JMenuItem"/>
+    <fullyQualifiedTypeName name="javax.swing.JPanel"/>
+    <fullyQualifiedTypeName name="panelPrincipal"/>
+    <fullyQualifiedTypeName name="marcoGeneral"/>
+    <fullyQualifiedTypeName name="javax.swing.JFrame"/>
+    <fullyQualifiedTypeName name="javax.swing.JMenuBar"/>
+    <fullyQualifiedTypeName name="java.awt.FlowLayout"/>
+    <fullyQualifiedTypeName name="javax.swing.JMenu"/>
+    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+    <fullyQualifiedTypeName name="javax.swing.JTextPane"/>
+    <fullyQualifiedTypeName name="java.awt.BorderLayout"/>
+    <fullyQualifiedTypeName name="java.awt.Font"/>
+    <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
 </qualifiedTypeNameHistroy>
