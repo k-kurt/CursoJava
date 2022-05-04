@@ -37,7 +37,7 @@ class panelPrincipal extends JPanel{
 	public panelPrincipal() {
 		setLayout(new BorderLayout());
 		JPanel lamina2=new JPanel();
-		eventos loseventos=new eventos();
+		//eventos loseventos=new eventos();
 		//-------------------------------------------------------------
 		menu=new JMenuBar();
 		fuente=new JMenu("Fuentes");
@@ -45,9 +45,32 @@ class panelPrincipal extends JPanel{
 		tamanio=new JMenu("Tamaño");
 		//-------------------------------------------------------------
 		fuente.add(arial=new JMenuItem("Arial"));
+		arial.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				laminaTexto.setFont(new Font("Arial",Font.PLAIN,12));
+			}
+		});
 		fuente.add(courier=new JMenuItem("Courier"));
-		courier.addActionListener(loseventos);
+		//courier.addActionListener(losevento);
+		//USANDO CLASES ANONIMAS
+		
+		  courier.addActionListener(new ActionListener() {
+		  
+		  @Override public void actionPerformed(ActionEvent e) {
+			  laminaTexto.setFont(new Font("Courier",Font.PLAIN,12)); } });
+		 
 		fuente.add(verdana=new JMenuItem("Verdana"));
+		verdana.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				laminaTexto.setFont(new Font("Verdana",Font.PLAIN,12));
+			}
+		});
 		//-------------------------------------------------------------
 		estilo.add(negrita=new JMenuItem("Negrita"));
 		estilo.add(cursiva=new JMenuItem("Cursiva"));
@@ -66,15 +89,17 @@ class panelPrincipal extends JPanel{
 		add(laminaTexto,BorderLayout.CENTER);
 	}
 	
-	private class eventos implements ActionListener{
-
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-			laminaTexto.setFont(new Font("Courier",Font.PLAIN,12));
-		}
-		
-	}
+	/*
+	 * private class eventos implements ActionListener{
+	 * 
+	 * @Override public void actionPerformed(ActionEvent e) { // TODO Auto-generated
+	 * method stub laminaTexto.setFont(new Font("Courier",Font.PLAIN,12));
+	 * 
+	 * 
+	 * }
+	 * 
+	 * }
+	 */
 	
 	private JTextPane laminaTexto;
 	private JMenuBar menu;
