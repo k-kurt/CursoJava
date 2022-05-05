@@ -95,11 +95,26 @@ class panelPrincipal extends JPanel {
 			tamanio_letra = tam_letra;
 		}
 
+		
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			laminaTexto.setFont(new Font(tipo_texto,estilo_letra,tamanio_letra));
 			
+			letras=laminaTexto.getFont();
+			
+			if(menu=="Arial"||menu=="Courier"||menu=="Verdana") {
+				estilo_letra=letras.getStyle();
+				tamanio_letra=letras.getSize();
+			}else if(menu=="Negrita"||menu=="Cursiva") {
+				tipo_texto=letras.getName();
+				tamanio_letra=letras.getSize();
+			}else if(menu=="16"||menu=="20"||menu=="24"||menu=="26") {
+				tipo_texto=letras.getName();
+				estilo_letra=letras.getStyle();
+			}
+			
+			laminaTexto.setFont(new Font(tipo_texto,estilo_letra,tamanio_letra));
+			System.out.println("Tipo de texto: "+tipo_texto+" Estilo del texto: "+estilo_letra+" tamanio de la letra: "+tamanio_letra);
 		}
 
 	}
