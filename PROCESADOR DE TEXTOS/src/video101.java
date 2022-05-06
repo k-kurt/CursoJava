@@ -4,6 +4,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -48,19 +49,19 @@ class panelPrincipal extends JPanel {
 		tamanio = new JMenu("Tamaño");
 		// -------------------------------------------------------------
 
-		configura_menu("Arial", "fuente", "Arial", 9, 10);
-		configura_menu("Courier", "fuente", "Courier", 9, 10);
-		configura_menu("Verdana", "fuente", "Verdana",9, 10);
+		configura_menu("Arial", "fuente", "Arial", 9, 10,"");
+		configura_menu("Courier", "fuente", "Courier", 9, 10,"");
+		configura_menu("Verdana", "fuente", "Verdana",9, 10,"");
 		// -------------------------------------------------------------
 
-		configura_menu("Negrita", "estilo", "", Font.BOLD, 1);
-		configura_menu("Cursiva", "estilo", "", Font.ITALIC, 1);
+		configura_menu("Negrita", "estilo", "", Font.BOLD, 1,"src/iconos/texto-en-negrita.gif");
+		configura_menu("Cursiva", "estilo", "", Font.ITALIC, 1,"src/iconos/boton-de-cursiva.gif");
 
 		// -------------------------------------------------------------
-		configura_menu("16", "tamanio", "", 9, 16);
-		configura_menu("20", "tamanio", "", 9, 20);
-		configura_menu("24", "tamanio", "", 9, 24);
-		configura_menu("26", "tamanio", "", 9, 26);
+		configura_menu("16", "tamanio", "", 9, 16,"");
+		configura_menu("20", "tamanio", "", 9, 20,"");
+		configura_menu("24", "tamanio", "", 9, 24,"");
+		configura_menu("26", "tamanio", "", 9, 26,"");
 
 		menu.add(fuente);
 		menu.add(estilo);
@@ -71,9 +72,9 @@ class panelPrincipal extends JPanel {
 		add(laminaTexto, BorderLayout.CENTER);
 	}
 
-	public void configura_menu(String rotulo, String menu, String tipo_letra, int estilos, int tam) {
+	public void configura_menu(String rotulo, String menu, String tipo_letra, int estilos, int tam,String ruta_icono) {
 
-		JMenuItem elemMenu = new JMenuItem(rotulo);
+		JMenuItem elemMenu = new JMenuItem(rotulo,new ImageIcon(ruta_icono));
 		if (menu == "fuente") {
 			fuente.add(elemMenu);
 			if(tipo_letra=="Arial") {

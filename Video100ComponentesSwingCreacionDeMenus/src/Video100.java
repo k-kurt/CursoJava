@@ -1,8 +1,10 @@
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 public class Video100 {
 
@@ -38,9 +40,12 @@ class panelmenu extends JPanel{
 		
 		JMenuItem guardar=new JMenuItem("Guardar");
 		JMenuItem guardar_como=new JMenuItem("Guardar Como...");
-		JMenuItem cortar=new JMenuItem("Cortar");
-		JMenuItem editar=new JMenuItem("Editar");
-		JMenuItem pegar=new JMenuItem("Pegar");
+		JMenuItem cortar=new JMenuItem("Cortar",new ImageIcon("src/imagenes/cortar-con-tijeras.gif"));
+		JMenuItem editar=new JMenuItem("Copiar", new ImageIcon("src/imagenes/copia.gif"));
+		//editar.setHorizontalTextPosition(SwingConstants.LEFT);//ES PARA PONER EL ICONO A LA DERECHA YA
+		//QUE PONEMOS EL TEXTO A LA IZQUIERDA.
+		
+		JMenuItem pegar=new JMenuItem("Pegar", new ImageIcon("src/imagenes/pegar.gif"));
 		JMenuItem general=new JMenuItem("Generales");
 		JMenuItem opcion1=new JMenuItem("Opcion 1");
 		JMenuItem opcion2=new JMenuItem("Opccion 2");
