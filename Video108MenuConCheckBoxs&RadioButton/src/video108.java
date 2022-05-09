@@ -4,6 +4,7 @@ import java.awt.Font;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 public class video108 {
@@ -42,8 +43,13 @@ class panelMenu extends JPanel{
 		laminaMenu.add(menu);
 		add(laminaMenu,BorderLayout.NORTH);
 	}
-	public void creacion_items() {
-		
+	public void creacion_items(String menu_pertenece,String nom_item,String tipo_fuente,String tipo_estilo,int tamanio_letra) {
+		JMenuItem itemMenu=new JMenuItem(nom_item);
+		if(menu_pertenece=="fuente") {
+			fuente.add(itemMenu);
+		}else if(menu_pertenece=="estilo") {
+			
+		}
 	}
 	 
 	JMenu fuente,estilo,tamanio;
