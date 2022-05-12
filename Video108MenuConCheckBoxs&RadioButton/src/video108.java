@@ -76,8 +76,14 @@ class panelMenu extends JPanel{
 			}
 		}else if(menu_pertenece=="estilo") {
 			estilo.add(itemMenu);
+			if(tipo_estilo==Font.BOLD) {
+				itemMenu.addActionListener(new StyledEditorKit.BoldAction());
+			}else if(tipo_estilo==Font.ITALIC) {
+				itemMenu.addActionListener(new StyledEditorKit.ItalicAction());
+			}
 		}else if(menu_pertenece=="tamanio") {
 			tamanio.add(itemMenu);
+			itemMenu.addActionListener(new StyledEditorKit.FontSizeAction("event", tamanio_letra));
 		}
 	}
 	 
