@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="LaminaDeCuadroDeText.LaminaListener"/>
-    <fullyQualifiedTypeName name="MarcoCuadroTexto"/>
     <fullyQualifiedTypeName name="PanelCuadroTextos"/>
     <fullyQualifiedTypeName name="PanelEventosII"/>
     <fullyQualifiedTypeName name="MarcoEventosII"/>
@@ -55,9 +53,11 @@
     <fullyQualifiedTypeName name="javax.swing.JMenu"/>
     <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
     <fullyQualifiedTypeName name="javax.swing.JTextPane"/>
-    <fullyQualifiedTypeName name="java.awt.BorderLayout"/>
     <fullyQualifiedTypeName name="java.awt.Font"/>
     <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
     <fullyQualifiedTypeName name="javax.swing.SwingConstants"/>
     <fullyQualifiedTypeName name="javax.swing.ImageIcon"/>
+    <fullyQualifiedTypeName name="panelMenu"/>
+    <fullyQualifiedTypeName name="marcoMenu"/>
+    <fullyQualifiedTypeName name="java.awt.BorderLayout"/>
 </qualifiedTypeNameHistroy>
