@@ -1,7 +1,12 @@
+import java.awt.BorderLayout;
+
 import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
+import javax.swing.JTextPane;
 
 public class Video109 {
 
@@ -26,6 +31,25 @@ class marcoMenu extends JFrame{
 
 class panelMenu extends JPanel{
 	public panelMenu() {
+		setLayout(new BorderLayout());
+		JPanel lamina2=new JPanel();
+		
+		JMenuBar menubar=new JMenuBar();
+		JMenu fuente=new JMenu("Fuente");
+		JMenu estilo=new JMenu("Estilo");
+		JMenu tamanio=new JMenu("Tamaño");
+		menubar.add(fuente);
+		menubar.add(estilo);
+		menubar.add(tamanio);
+		
+		
+		lamina2.add(menubar);
+		add(lamina2,BorderLayout.NORTH);
+		
+		JTextPane texto=new JTextPane();
+		add(texto,BorderLayout.CENTER);
+		
+		
 		JPopupMenu emergente=new JPopupMenu();
 		JMenuItem menu=new JMenuItem("opcion 1");
 		JMenuItem menu2=new JMenuItem("opcion 2");
@@ -34,7 +58,7 @@ class panelMenu extends JPanel{
 		emergente.add(menu);
 		emergente.add(menu2);
 		emergente.add(menu3);
-		setComponentPopupMenu(emergente);//elegimos la lamina como objeto sobre cual actua el menu emergente
+		texto.setComponentPopupMenu(emergente);//elegimos la lamina como objeto sobre cual actua el menu emergente
 		
 	}
 }
