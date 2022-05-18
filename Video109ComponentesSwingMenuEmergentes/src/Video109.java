@@ -28,7 +28,12 @@ class panelMenu extends JPanel{
 	public panelMenu() {
 		JPopupMenu emergente=new JPopupMenu();
 		JMenuItem menu=new JMenuItem("opcion 1");
+		JMenuItem menu2=new JMenuItem("opcion 2");
+		JMenuItem menu3=new JMenuItem("opcion 3");
+		
 		emergente.add(menu);
+		emergente.add(menu2);
+		emergente.add(menu3);
 		setComponentPopupMenu(emergente);//elegimos la lamina como objeto sobre cual actua el menu emergente
 		
 	}
