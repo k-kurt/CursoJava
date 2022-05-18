@@ -1,5 +1,7 @@
 import java.awt.BorderLayout;
 import java.awt.Font;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
 
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
@@ -12,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JTextPane;
+import javax.swing.KeyStroke;
 import javax.swing.text.StyledEditorKit;
 
 public class video108 {
@@ -86,6 +89,8 @@ class panelMenu extends JPanel {
 		JRadioButtonMenuItem t24 = new JRadioButtonMenuItem("24");
 		JRadioButtonMenuItem t26 = new JRadioButtonMenuItem("26");
 
+		t26.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, InputEvent.CTRL_DOWN_MASK));
+		
 		grupo.add(t16);
 		grupo.add(t20);
 		grupo.add(t24);
@@ -136,8 +141,10 @@ class panelMenu extends JPanel {
 		} else if (menu_pertenece == "estilo") {
 			estilo.add(itemMenu);
 			if (tipo_estilo == Font.BOLD) {
+				itemMenu.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N,InputEvent.CTRL_DOWN_MASK));
 				itemMenu.addActionListener(new StyledEditorKit.BoldAction());
 			} else if (tipo_estilo == Font.ITALIC) {
+				itemMenu.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_I,InputEvent.CTRL_DOWN_MASK));
 				itemMenu.addActionListener(new StyledEditorKit.ItalicAction());
 			}
 		} else if (menu_pertenece == "tamanio") {
