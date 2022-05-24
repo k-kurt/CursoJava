@@ -59,11 +59,12 @@ class Laminaprincipal extends JPanel{
 		 */
 		
 		
-		InputMap  mapa_entrada= getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
+		InputMap  mapa_entrada= getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);//cuales van a ser los objetos que tengas el foco para esa combinacion de teclas
+		//cuando la lamina tena el foco, los componentes en ella van a recibir la combinacion de teclas
 		KeyStroke tecla_amarillo=KeyStroke.getKeyStroke("ctrl A");
-		mapa_entrada.put(tecla_amarillo, "fondoAmarillo");
+		mapa_entrada.put(tecla_amarillo, "fondoAmarillo");//asignar combinacion de teclas a un objeto
 		ActionMap mapaAccion = getActionMap();
-		mapaAccion.put("fondoAmarillo",accionAmarilla);
+		mapaAccion.put("fondoAmarillo",accionAmarilla);//asignar objetos a acciones
 		
 		mapa_entrada.put(KeyStroke.getKeyStroke("ctrl B"), "fondoverde");
 		mapaAccion.put("fondoverde", accionVerde);
@@ -91,14 +92,20 @@ class Laminaprincipal extends JPanel{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			Color c=(Color)getValue("color_de_fondo");
+			Color c=(Color)getValue("color_de_fondo");//casting(Color)
 			setBackground(c);
 			System.out.println("Nombre: "+ getValue(Action.NAME)+ " La descripcion: "+ getValue(Action.SHORT_DESCRIPTION));
 		}
 		
 	}
 	
-	
+	/*
+	 * setEnabled se utiliza para que un boton(por ejemplo: copiar,pegar,cortar) esten
+	 * desactivados cuando no se pueden utilizar. con isEnabled vemos si esta activado ese boton del ejemplo. 
+	 * el metodo putValue permite almacenar la informacion que deseamos de la fuente en un formato clave: valor, se almacena automaticamente
+	 * en el parametro event del metodo actionPefomed el cual se invoca automaticamente cuando ejecutamos la accion
+	 * El getValue toma la informacion guardada en ese objeto event 
+	 */ 
 	
 }
 
