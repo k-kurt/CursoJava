@@ -114,12 +114,18 @@ class panelMenu extends JPanel {
 		JButton cursivabar=new JButton(new ImageIcon("C:/Users/genesis/Desktop/Cursos/JAVA/PROCESADOR DE TEXTOS/src/iconos/boton-de-cursiva.gif"/*.../PROCESADOR DE TEXTOS/src/iconos/boton-de-cursiva.gif"*/));
 		JButton subrabar=new JButton(new ImageIcon("src/subrayada.png"));
 		JButton negritabar=new JButton(new ImageIcon("C:/Users/genesis/Desktop/Cursos/JAVA/PROCESADOR DE TEXTOS/src/iconos/texto-en-negrita.gif"/*.../PROCESADOR DE TEXTOS/src/iconos/boton-de-cursiva.gif"*/));
+		JButton verde=new JButton(new ImageIcon("src/verde.png"));
+		JButton rojo=new JButton(new ImageIcon("src/rojo.png"));
+		JButton azul=new JButton(new ImageIcon("src/azul.png"));
 		cursivabar.addActionListener(new StyledEditorKit.BoldAction());
 		negritabar.addActionListener(new StyledEditorKit.ItalicAction());
 		subrabar.addActionListener(new StyledEditorKit.UnderlineAction());
 		menubar.add(negritabar);
 		menubar.add(cursivabar);
 		menubar.add(subrabar);
+		menubar.add(verde);
+		menubar.add(rojo);
+		menubar.add(azul);
 		menubar.setOrientation(1);
 		add(menubar,BorderLayout.WEST);
 
