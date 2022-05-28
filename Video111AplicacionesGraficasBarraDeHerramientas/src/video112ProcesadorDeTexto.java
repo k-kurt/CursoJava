@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
@@ -17,6 +18,8 @@ import javax.swing.JTextPane;
 import javax.swing.JToolBar;
 import javax.swing.KeyStroke;
 import javax.swing.text.StyledEditorKit;
+import javax.swing.text.StyledEditorKit.AlignmentAction;
+import javax.swing.text.StyledEditorKit.ForegroundAction;
 import javax.swing.text.StyledEditorKit.ItalicAction;
 
 public class video112ProcesadorDeTexto {
@@ -34,7 +37,7 @@ class marcoMenu extends JFrame {
 
 	public marcoMenu() {
 		setTitle("Video 108, añadiendo checkboxs y radioButtons al editor de texto");
-		setBounds(200, 100, 1000, 500);
+		setBounds(0,0,300, 800);
 		panelMenu lamina = new panelMenu();
 		add(lamina);
 
@@ -117,16 +120,36 @@ class panelMenu extends JPanel {
 		JButton verde=new JButton(new ImageIcon("src/verde.png"));
 		JButton rojo=new JButton(new ImageIcon("src/rojo.png"));
 		JButton azul=new JButton(new ImageIcon("src/azul.png"));
+		JButton centrado=new JButton(new ImageIcon("src/centrado.png"));
+		JButton izquierda=new JButton(new ImageIcon("src/izquierda.png"));
+		JButton derecha=new JButton(new ImageIcon("src/derecha.png"));
+		JButton justificado=new JButton(new ImageIcon("src/justificar.png"));
+		
 		cursivabar.addActionListener(new StyledEditorKit.BoldAction());
 		negritabar.addActionListener(new StyledEditorKit.ItalicAction());
 		subrabar.addActionListener(new StyledEditorKit.UnderlineAction());
+		verde.addActionListener(new StyledEditorKit.ForegroundAction("verde", Color.GREEN));
+		rojo.addActionListener(new StyledEditorKit.ForegroundAction("rojo",Color.RED));
+		azul.addActionListener(new StyledEditorKit.ForegroundAction("azul",Color.BLUE));
+		centrado.addActionListener(new StyledEditorKit.AlignmentAction("centrado", 1));
+		izquierda.addActionListener(new StyledEditorKit.AlignmentAction("izquierda",0));
+		derecha.addActionListener(new StyledEditorKit.AlignmentAction("derecha",2));
+		justificado.addActionListener(new StyledEditorKit.AlignmentAction("justificar",3));
+		
+		
 		menubar.add(negritabar);
 		menubar.add(cursivabar);
 		menubar.add(subrabar);
 		menubar.add(verde);
 		menubar.add(rojo);
 		menubar.add(azul);
+		menubar.add(centrado);
+		menubar.add(izquierda);
+		menubar.add(derecha);
+		menubar.add(justificado);
+		
 		menubar.setOrientation(1);
+		
 		add(menubar,BorderLayout.WEST);
 
 	}
