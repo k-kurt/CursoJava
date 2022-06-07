@@ -41,10 +41,11 @@ class lamina extends JPanel{
 		setLayout(miLayout);
 		
 		Spring mimuelle=Spring.constant(0, 10, 100);
+		Spring muellerigido=Spring.constant(10);//este constructor sirve para hacer un muelle rigido
 		
 		miLayout.putConstraint(SpringLayout.WEST, boton1, mimuelle, SpringLayout.WEST, this);//(del lado donde empieza del objeto 1, el objeto, el muelle, el lado donde empieza del objeto 2
-		miLayout.putConstraint(SpringLayout.WEST, boton2, mimuelle, SpringLayout.EAST, boton1);
-		miLayout.putConstraint(SpringLayout.WEST, boton3, mimuelle, SpringLayout.EAST, boton2);
+		miLayout.putConstraint(SpringLayout.WEST, boton2, muellerigido, SpringLayout.EAST, boton1);
+		miLayout.putConstraint(SpringLayout.WEST, boton3, muellerigido, SpringLayout.EAST, boton2);
 		miLayout.putConstraint(SpringLayout.EAST, this, mimuelle, SpringLayout.EAST, boton3);
 	}
 	

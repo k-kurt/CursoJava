@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="javax.swing.JButton"/>
-    <fullyQualifiedTypeName name="javax.swing.JTextArea"/>
     <fullyQualifiedTypeName name="javax.swing.JScrollPane"/>
     <fullyQualifiedTypeName name="marcoLayout"/>
     <fullyQualifiedTypeName name="javax.swing.JTextField"/>
@@ -60,4 +58,6 @@
     <fullyQualifiedTypeName name="javax.swing.text.StyledEditorKit.ForegroundAction"/>
     <fullyQualifiedTypeName name="javax.swing.text.StyledEditorKit"/>
     <fullyQualifiedTypeName name="javax.swing.text.StyledEditorKit.AlignmentAction"/>
+    <fullyQualifiedTypeName name="javax.swing.Spring"/>
+    <fullyQualifiedTypeName name="javax.swing.SpringLayout"/>
 </qualifiedTypeNameHistroy>
