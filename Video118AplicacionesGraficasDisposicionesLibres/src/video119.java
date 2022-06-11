@@ -24,7 +24,7 @@ public class video119 {
 class marco extends JFrame {
 	public marco() {
 		setTitle("Video 119 disposiciones libres II");
-		setBounds(200, 200, 800, 500);
+		setBounds(200, 200, 1200, 500);
 		panel lamina = new panel();
 		add(lamina);
 	}
@@ -38,12 +38,15 @@ class panel extends JPanel {
 		Label labapellido = new Label("APELLIDO: ");
 		JTextField txtnombre = new JTextField();
 		JTextField txtapellido = new JTextField();
+		Label labTelefono=new Label("Telefono: ");
+		JTextField txttelefono=new JTextField();
 
 		add(labnombre);
 		add(txtnombre);
 		add(labapellido);
 		add(txtapellido);
-
+		add(labTelefono);
+		add(txttelefono);
 	}
 }
 
@@ -76,7 +79,10 @@ class columnaContenerdor implements LayoutManager {
 	@Override
 	public void layoutContainer(Container parent) {
 		// TODO Auto-generated method stub
+		int d=parent.getWidth();
+		int x=d/2;
 		int contador = 0;
+		
 
 		int n = parent.getComponentCount();// para utilizar en el for
 		for (int i = 0; i < n; i++) {
@@ -84,10 +90,10 @@ class columnaContenerdor implements LayoutManager {
 			Component c = parent.getComponent(i);// devuelve un objeto de tipo componente y almacena ese componente que
 													// devuelve este metodo parent
 
-			c.setBounds(x, y, 100, 20);
+			c.setBounds(x-100, y, 100, 20);
 			x += 100;
 			if (contador % 2 == 0) {
-				x = 20;
+				x = d/2;
 				y += 40;
 
 			}
@@ -95,6 +101,6 @@ class columnaContenerdor implements LayoutManager {
 
 	}
 
-	int x = 20;
+	int x;
 	int y = 20;
 }

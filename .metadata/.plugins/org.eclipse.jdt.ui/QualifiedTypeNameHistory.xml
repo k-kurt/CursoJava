@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="javax.swing.JScrollPane"/>
-    <fullyQualifiedTypeName name="marcoLayout"/>
-    <fullyQualifiedTypeName name="javax.swing.JTextField"/>
-    <fullyQualifiedTypeName name="marcoLayout.laminasMarco"/>
-    <fullyQualifiedTypeName name="javax.swing.JCheckBox"/>
     <fullyQualifiedTypeName name="java.awt.GridLayout"/>
     <fullyQualifiedTypeName name="javax.swing.border.Border"/>
     <fullyQualifiedTypeName name="laminaPrincipal"/>
@@ -31,7 +26,6 @@
     <fullyQualifiedTypeName name="marcomenu"/>
     <fullyQualifiedTypeName name="javax.swing.JMenuItem"/>
     <fullyQualifiedTypeName name="javax.swing.JPanel"/>
-    <fullyQualifiedTypeName name="panelPrincipal"/>
     <fullyQualifiedTypeName name="marcoGeneral"/>
     <fullyQualifiedTypeName name="javax.swing.JFrame"/>
     <fullyQualifiedTypeName name="javax.swing.JMenuBar"/>
@@ -60,4 +54,10 @@
     <fullyQualifiedTypeName name="javax.swing.text.StyledEditorKit.AlignmentAction"/>
     <fullyQualifiedTypeName name="javax.swing.Spring"/>
     <fullyQualifiedTypeName name="javax.swing.SpringLayout"/>
+    <fullyQualifiedTypeName name="java.awt.Panel"/>
+    <fullyQualifiedTypeName name="MarcoPrincipal"/>
+    <fullyQualifiedTypeName name="PanelPrincipal"/>
+    <fullyQualifiedTypeName name="panelPrincipal"/>
+    <fullyQualifiedTypeName name="java.awt.LayoutManager"/>
+    <fullyQualifiedTypeName name="columnaContenerdor"/>
 </qualifiedTypeNameHistroy>
