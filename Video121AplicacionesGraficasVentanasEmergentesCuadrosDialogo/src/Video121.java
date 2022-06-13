@@ -3,6 +3,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class Video121 {
@@ -53,10 +54,14 @@ class Lamina_Cuadros_Dialogos extends JPanel {
 		public void actionPerformed(ActionEvent e) {
 
 			if (e.getSource() == boton1) {
-				System.out.println("Has pulsado el botón 1");
+				//System.out.println("Has pulsado el botón 1");
+				//JOptionPane.showMessageDialog(Lamina_Cuadros_Dialogos.this, "Haz presionado el boton 1");
+				JOptionPane.showMessageDialog(Lamina_Cuadros_Dialogos.this, "prueba 2", "Error", 2);
 
 			} else if (e.getSource() == boton2) {
-				System.out.println("Has pulsado el botón 2");
+				//System.out.println("Has pulsado el botón 2");
+				JOptionPane.showInputDialog(Lamina_Cuadros_Dialogos.this, "Ingrese un valor");
+				//usando la sobrecarga de constructores podemos cambiar seguramente el aspecto de esta ventana emergente
 
 			} else if (e.getSource() == boton3) {
 
