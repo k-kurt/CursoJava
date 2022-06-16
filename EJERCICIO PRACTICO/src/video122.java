@@ -34,21 +34,42 @@ class Panellamina extends JPanel{
 		
 		JPanel laminaArriba=new JPanel(new GridLayout());
 		
-		Box caja1 =Box.createVerticalBox();
-		ButtonGroup grupo1=new ButtonGroup();
-		JRadioButton mensaje=new JRadioButton("Mensaje");
-		caja1.add(mensaje);
+		 caja1 =Box.createVerticalBox();
+		grupo1=new ButtonGroup();
+		grupo2=new ButtonGroup();
+		grupo3=new ButtonGroup();
+		grupo4=new ButtonGroup();
+		grupo5=new ButtonGroup();
+		grupo6=new ButtonGroup();
+		
 		
 		laminaArriba.add(caja1);
 		add(laminaArriba,BorderLayout.CENTER);
 		
-		
-		
-		
+	
 		
 		JPanel laminaAbajo=new JPanel();
 		JButton mostrar=new JButton("Mostrar");
 		laminaAbajo.add(mostrar);
 		add(laminaAbajo,BorderLayout.SOUTH);
 	}
+	
+	//puedo hacer una clase interna que permita agregar los botones a un buttongroup con un metodo que retorne el boton
+	
+
+	public void CrearOpciones(String nombCaja, String MensItem, String nombGrupo) {
+		JRadioButton nombItem  = new JRadioButton(MensItem);
+		if(nombCaja=="caja1") {
+			caja1.add(nombItem);
+		grupo1.add(nombItem);
+		}
+	}
+	
+	ButtonGroup grupo1;
+	ButtonGroup grupo2;
+	ButtonGroup grupo3;
+	ButtonGroup grupo4;
+	ButtonGroup grupo5;
+	ButtonGroup grupo6;
+	Box caja1;
 }
