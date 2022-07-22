@@ -2,6 +2,8 @@ package practicas;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -38,6 +40,7 @@ public class Marco_Dialogos extends JFrame {
 		//Contruimos la lamina inferior
 		JPanel lamina_inferior=new JPanel();
 		JButton btnMostrar=new JButton("Mostrar");
+		btnMostrar.addActionListener(new AccionMostrar());
 		lamina_inferior.add(btnMostrar);
 		add(lamina,BorderLayout.CENTER);
 		add(lamina_inferior,BorderLayout.SOUTH);
@@ -50,6 +53,19 @@ public class Marco_Dialogos extends JFrame {
 
 		//lamina.add(lamina2);
 		//add(lamina);
+	}
+	
+	
+	private class AccionMostrar implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			
+			//System.out.println("FUNCIONA");
+			System.out.println(lamina_tipo.dameSeleccion());
+		}
+		
 	}
 	
 	private Botones_dialogos lamina_tipo, lamina_tipo_mensaje, lamina_mensaje, lamina_confirmar, lamina_opcion, lamina_entrada;
