@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class Marco_Dialogos extends JFrame {
@@ -63,11 +64,17 @@ public class Marco_Dialogos extends JFrame {
 			// TODO Auto-generated method stub
 			
 			//System.out.println("FUNCIONA");
-			System.out.println(lamina_tipo.dameSeleccion());
+			//System.out.println(lamina_tipo.dameSeleccion());
+			if(lamina_tipo.dameSeleccion().equals("Mensaje")) {
+			JOptionPane.showInputDialog(Marco_Dialogos.this, "Mensaje","Titulo", 0);
+			
 		}
 		
+	}
 	}
 	
 	private Botones_dialogos lamina_tipo, lamina_tipo_mensaje, lamina_mensaje, lamina_confirmar, lamina_opcion, lamina_entrada;
 
 }
+
+
