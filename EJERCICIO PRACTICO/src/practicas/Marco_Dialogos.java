@@ -1,10 +1,14 @@
 package practicas;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Component;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.geom.Rectangle2D;
 import java.util.Date;
 
 import javax.swing.Icon;
@@ -59,6 +63,18 @@ public class Marco_Dialogos extends JFrame {
 		// lamina.add(lamina2);
 		// add(lamina);
 	}
+	
+	//-------------------proporciona el mensaje
+	
+	public Object devuelveOpcion() {
+		String s=lamina_mensaje.dameSeleccion();
+		if(s.equals("Mensaje")) {
+			return sMsj;
+		}
+	}
+	
+	
+	
 
 	private class AccionMostrar implements ActionListener {
 
@@ -87,6 +103,17 @@ public class Marco_Dialogos extends JFrame {
 	private String sMsj="Mensaje";
 	private Icon iconoMensaje=new ImageIcon("../MULTIMEDIA/bola_roja.jpg");
 	private Object objetoMensaje=new Date();
-	private Component componenteMensaje=new lamina_objecto();
+	private Component componenteMensaje=new lamina_objeto();
+	
+}
+
+class lamina_objeto extends JPanel{
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		Graphics2D g2=(Graphics2D) g;
+		Rectangle2D rectangulo=new Rectangle2D.Double(0,0,getWidth(),getHeight());
+		g2.setPaint(Color.yellow);
+		g2.fill(rectangulo);
+	}
 	
 }
