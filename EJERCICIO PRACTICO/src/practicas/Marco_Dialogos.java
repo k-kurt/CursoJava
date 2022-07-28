@@ -85,17 +85,17 @@ public class Marco_Dialogos extends JFrame {
 	}
 	
 	
-	//-------------------DEVUELVE TIPO ICONO
+	//-------------------DEVUELVE TIPO ICONO y tambien n° de botones en confirmar
 	
-	public int devuelveTipoIcono(){
+	public int devuelvetipo(Botones_dialogos lamina){
 		
-		String s=lamina_tipo_mensaje.dameSeleccion();
+		String s=lamina.dameSeleccion();
 		
-		if(s.equals("ERROR_MENSSAGE"))return 0;
-		else if(s.equals("INFORMATION_MESSAGE"))return 1;
-		else if(s.equals("WARNNING_MESSAGE"))return 2;
+		if(s.equals("ERROR_MENSSAGE")||s.equals("YES_NO_OPTION"))return 0;
+		else if(s.equals("INFORMATION_MESSAGE")||s.equals("YES_NO_CANCEL_OPTION"))return 1;
+		else if(s.equals("WARNNING_MESSAGE")||s.equals("OK_CANCEL_OPTION"))return 2;
 		else if(s.equals("QUESTION_MESSAGE"))return 3;
-		else if(s.equals("PLAIN_MESSAGE"))return -1;
+		else if(s.equals("PLAIN_MESSAGE")||s.equals("DEFAULT_OPTION"))return -1;
 		else{return 0;
 		
 	}
@@ -112,13 +112,13 @@ public class Marco_Dialogos extends JFrame {
 			// System.out.println("FUNCIONA");
 			// System.out.println(lamina_tipo.dameSeleccion());
 			if (lamina_tipo.dameSeleccion().equals("Mensaje")) {
-				JOptionPane.showMessageDialog(Marco_Dialogos.this, dameMensaje(), "Titulo", devuelveTipoIcono());
+				JOptionPane.showMessageDialog(Marco_Dialogos.this, dameMensaje(), "Titulo", devuelvetipo(lamina_tipo_mensaje));
 			} else if (lamina_tipo.dameSeleccion().equals("Confirmar")) {
-				JOptionPane.showConfirmDialog(Marco_Dialogos.this, dameMensaje(), "Titulo", 0, devuelveTipoIcono());
+				JOptionPane.showConfirmDialog(Marco_Dialogos.this, dameMensaje(), "Titulo", devuelvetipo(lamina_confirmar),  devuelvetipo(lamina_tipo_mensaje));
 			} else if (lamina_tipo.dameSeleccion().equals("Entrada")) {
-				JOptionPane.showInputDialog(Marco_Dialogos.this, dameMensaje(), "titulo", devuelveTipoIcono());
+				JOptionPane.showInputDialog(Marco_Dialogos.this, dameMensaje(), "titulo",  devuelvetipo(lamina_tipo_mensaje));
 			} else if (lamina_tipo.dameSeleccion().equals("Opcion")) {
-				JOptionPane.showOptionDialog(Marco_Dialogos.this, dameMensaje(), "Titulo", 0, devuelveTipoIcono(), null, null, null);
+				JOptionPane.showOptionDialog(Marco_Dialogos.this, dameMensaje(), "Titulo", 0,  devuelvetipo(lamina_tipo_mensaje), null, null, null);
 			}
 
 		}
