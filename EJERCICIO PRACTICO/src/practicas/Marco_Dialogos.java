@@ -101,8 +101,23 @@ public class Marco_Dialogos extends JFrame {
 	}
 	}
 	
+	//metodo que da opciones a la lamina opcion---------------------------------------------------
 	
-
+	public Object[] dameOpciones(Botones_dialogos lamina) {
+		String s=lamina.dameSeleccion();
+		if(s.equals("String[]"))return new String[] {"Amarillo","rojo","azul"};
+		else if(s.equals("Icon[]"))return new Object[] {new ImageIcon("../MULTIMEDIA/bola_roja.jpg"),new ImageIcon("../MULTIMEDIA/bola_verde.jpg"),new ImageIcon("../MULTIMEDIA/bola_amarilla.jpg")};
+		else if(s.equals("Object[]"))return new Object[] {sMsj,iconoMensaje,objetoMensaje,componenteMensaje};
+		else {return null;}
+	}
+	
+	
+	
+	
+	
+	
+	
+//------------------------------------------------------------------------------------------------------
 	private class AccionMostrar implements ActionListener {
 
 		@Override
@@ -116,9 +131,15 @@ public class Marco_Dialogos extends JFrame {
 			} else if (lamina_tipo.dameSeleccion().equals("Confirmar")) {
 				JOptionPane.showConfirmDialog(Marco_Dialogos.this, dameMensaje(), "Titulo", devuelvetipo(lamina_confirmar),  devuelvetipo(lamina_tipo_mensaje));
 			} else if (lamina_tipo.dameSeleccion().equals("Entrada")) {
+				
+				if(lamina_entrada.dameSeleccion().equals("Campo de texto")) {
 				JOptionPane.showInputDialog(Marco_Dialogos.this, dameMensaje(), "titulo",  devuelvetipo(lamina_tipo_mensaje));
+				}else {
+					JOptionPane.showInputDialog(Marco_Dialogos.this, dameMensaje(), "Titulo", devuelvetipo(lamina_tipo_mensaje), null, new String[] {"Azul","amarillo","rojo"}, "Azul");
+				}
+			
 			} else if (lamina_tipo.dameSeleccion().equals("Opcion")) {
-				JOptionPane.showOptionDialog(Marco_Dialogos.this, dameMensaje(), "Titulo", 0,  devuelvetipo(lamina_tipo_mensaje), null, null, null);
+				JOptionPane.showOptionDialog(Marco_Dialogos.this, dameMensaje(), "Titulo", 0,  devuelvetipo(lamina_tipo_mensaje), null, dameOpciones(lamina_opcion), null);
 			}
 
 		}
