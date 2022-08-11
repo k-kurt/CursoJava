@@ -1,4 +1,4 @@
-package graficos;
+package excepciones;
 
 import java.awt.Graphics;
 import java.awt.Image;
@@ -8,7 +8,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class IncluyendoImagenes2 {
+public class IncluyendoImagenes {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -35,7 +35,7 @@ class PrimeraLamina extends JPanel {
 	public PrimeraLamina() {
 
 		try {
-			imagen2 = ImageIO.read(new File("../MULTIMEDIA/pelotaTenis.png"));
+			imagen2 = ImageIO.read(new File("../MULTIMEDIA/pelotaTenis1.png"));
 		} catch (IOException e) {
 			System.out.println("Imagen no encontrada");
 		}
@@ -52,20 +52,24 @@ class PrimeraLamina extends JPanel {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 
-		int alturaImagen = imagen2.getHeight(this);
-		int anchuraImagen = imagen2.getWidth(this);
+		if (imagen2 == null) {
+			g.drawString("No se pudo cargar la imagen", 10, 10);
+		} else {
+			int alturaImagen = imagen2.getHeight(this);
+			int anchuraImagen = imagen2.getWidth(this);
 
-		g.drawImage(imagen2, 0, 0, null);
+			g.drawImage(imagen2, 0, 0, null);
 
-		for (int i = 0; i < 300; i++) {
-			for (int j = 0; j < 200; j++) {
+			for (int i = 0; i < 300; i++) {
+				for (int j = 0; j < 200; j++) {
 
-				if (i + j > 0) {
-					g.copyArea(0, 0, 360, 360, anchuraImagen * i, alturaImagen * j);
+					if (i + j > 0) {
+						g.copyArea(0, 0, 360, 360, anchuraImagen * i, alturaImagen * j);
+					}
 				}
 			}
-		}
 
+		}
 	}
 
 	public Image imagen2;
