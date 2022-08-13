@@ -8,47 +8,47 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class IncluyendoImagenes {
+public class IncluyendoImagenesVideo144 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		MarcoPrincipal marco1 = new MarcoPrincipal();
+		MarcoPrincipal144 marco1 = new MarcoPrincipal144();
 		marco1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		marco1.setVisible(true);
 	}
 
 }
 
-class MarcoPrincipal extends JFrame {
-	public MarcoPrincipal() {
-		setTitle("video Numero 143");
+class MarcoPrincipal144 extends JFrame {
+	public MarcoPrincipal144() {
+		setTitle("video Numero 144");
 
 		// setExtendedState(MAXIMIZED_BOTH);
 		setSize(300, 200);
-		PrimeraLamina lamina = new PrimeraLamina();
+		PrimeraLamina144 lamina = new PrimeraLamina144();
 		add(lamina);
 	}
 }
 
-class PrimeraLamina extends JPanel {
-	public PrimeraLamina() {
+class PrimeraLamina144 extends JPanel {
+	public PrimeraLamina144() {
 
 		try {
-			imagen2 = ImageIO.read(new File("../MULTIMEDIA/pelotaTenis.png"));
+			imagen2 = ImageIO.read(new File("../MULTIMEDIA/pelotaTenis1.png"));//borrar el 1
 		} catch (IOException e) {
 			System.out.println("Imagen no encontrada");
 		}
 	}
 
 	
+	//NO ESTA CONSIDERADO BUENA PRACTICA HACER ESTO, ES MEJOR FORMA HACERLO DE LA FORMA ANTERIOR
+	
 
-	public void paintComponent(Graphics g) {
+	public void paintComponent(Graphics g) throws NullPointerException{
 		super.paintComponent(g);
 
-		if (imagen2 == null) {
-			g.drawString("No se pudo cargar la imagen", 10, 10);
-		} else {
+		try {
 			int alturaImagen = imagen2.getHeight(this);
 			int anchuraImagen = imagen2.getWidth(this);
 
@@ -62,8 +62,10 @@ class PrimeraLamina extends JPanel {
 					}
 				}
 			}
-
+		}catch(NullPointerException e) {
+			g.drawString("No se pudo cargar la imagen", 10, 10);
 		}
+		
 	}
 
 	public Image imagen2;
