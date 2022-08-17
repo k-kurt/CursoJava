@@ -19,13 +19,13 @@ public class video143 {
 			pedirDatos();
 		}else {
 			System.out.println("hemos terminado");
-			rc.close();
+			System.exit(0);
 		}
-		
+		rc.close();
 		
 	}
 
-	public static void pedirDatos() throws InputMismatchException{
+	 static void pedirDatos() throws InputMismatchException{
 		// TODO Auto-generated method stub
 		try{
 		System.out.println("Ingrese su nombre");
