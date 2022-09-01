@@ -28,7 +28,7 @@ public class Video146 {
 	
 
 	static void examina_mail(String mail) throws EOFException{//esta exception nos obliga a crear un try catch
-		//esta exception no es la indicada para el codigo que estamos haciendo, deberia ser otro
+		//esta exception no es la indicada para el codigo que estamos haciendo ya que es para recorrer un archivo
 	
 	
 	//static void examina_mail(String mail) throws ArrayIndexOutOfBoundsException{//no nos pide el try catch por que no es controlada, indicamos al metodo 
