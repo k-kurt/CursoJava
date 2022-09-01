@@ -15,7 +15,7 @@ public class Video147 {
 
 		} catch (Exception e) {
 			System.out.println("El email es incorrecto");
-			e.printStackTrace();
+			e.printStackTrace();//me muestra en mas detalle la exception, que clase lanzo la exception
 		}
 	}
 
