@@ -1,7 +1,7 @@
 package buffers_leyendo_escribiendo_bytes;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class video155 {
@@ -33,12 +33,31 @@ public class video155 {
 			leyendo_archivo.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("no se encuentra la imagen");
 		}
 
 		System.out.println(contador);
+		
+		nuevo_archivo(datos_entrada);
 	}
 
+	static void nuevo_archivo(int array_nuevo_datos[]) {
+		
+		try {
+			FileOutputStream copiando_archivo=new FileOutputStream("C:/Users/genesis/Desktop/video 22 copia.png");
+			
+			for(int i=0;i<array_nuevo_datos.length;i++) {
+				copiando_archivo.write(array_nuevo_datos[i]);
+			}
+		
+			copiando_archivo.close();
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println("no se pudo crear el archivo");
+		}
+	}
+	
 }
 
 //leyendo la informcion de la imagen
