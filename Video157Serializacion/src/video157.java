@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
@@ -54,7 +55,7 @@ public class video157 {
 
 		
 
-		class Empleado{
+		class Empleado implements Serializable{
 		 String nombre;
 		 double sueldo;
 		 Date fechaContrato;
@@ -110,3 +111,4 @@ public class video157 {
 		 
 		 
 		}
+		
