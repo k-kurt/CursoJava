@@ -56,7 +56,11 @@ public class video157 {
 		
 
 		class Empleado implements Serializable{
-		 String nombre;
+		 /**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+		String nombre;
 		 double sueldo;
 		 Date fechaContrato;
 		 public Empleado(String n, double s, int agno, int mes, int dia){
@@ -93,7 +97,11 @@ public class video157 {
 		 
 		}
 		class Administrador extends Empleado{
-		 private double incentivo;
+		 /**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+		private double incentivo;
 		 public Administrador(String n, double s, int agno, int mes, int dia){
 		  super(n,s,agno,mes,dia);
 		  incentivo = 0;
