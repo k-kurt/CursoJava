@@ -38,20 +38,36 @@ class pelotaHilos implements Runnable{
 
 	public void run() {
 		
-		for (int i = 1; i <= 1500; i++) {
+		System.out.println(Thread.currentThread().isInterrupted()+"Esta interrupido? al comenzar");
+		
+		
+		//for (int i = 1; i <= 1500; i++) {
 
+		//while(!Thread.interrupted()) {
+		
+		while(!Thread.currentThread().isInterrupted()) {
 			pelota.mueve_pelota(componente.getBounds());
 
 			componente.paint(componente.getGraphics());
 
-			try {
+			/*try {
 				Thread.sleep(4);// hace una pausa en el hilo de ejecucion
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				System.out.println("Hilo bloqueado. Imposible su interrupcion");
+				//System.exit(0);//intentamos salir pero se podria hacer otras cosas cuando se intenta interrunpir un hilo
 			}
+*/
+			
+			
+			
+			
 
+			
+			
 		}
+		
+		System.out.println(Thread.currentThread().isInterrupted()+"Esta interrupido? al terminar");
 		
 	}
 	
@@ -197,9 +213,29 @@ class MarcoRebote extends JFrame {
 			}
 
 		});
+		
+		
+		//dibuja el boton de detener
+		ponerBoton(laminaBotones, "Detener", new ActionListener() {
+
+			public void actionPerformed(ActionEvent evento) {
+
+				detener();
+
+			}
+
+		});
+
+		
+		
 
 		add(laminaBotones, BorderLayout.SOUTH);
 	}
+	
+
+	
+	
+	
 
 	// Ponemos botones
 
@@ -221,14 +257,24 @@ class MarcoRebote extends JFrame {
 
 		lamina.add(pelota);
 
-		
+		//instanciamos para hacer el uso de multiples hilos de ejecucion
 		Runnable r=new pelotaHilos(pelota, lamina);
-		Thread t=new Thread(r);
+		//Thread t=new Thread(r);
+		t=new Thread(r);
 		t.start();
 		
 
 	}
+	
+	
+	public void detener() {
+		
+		//t.stop(); OBSOLETO
+		t.interrupt();
+	}
 
+	
+	Thread t;
 	private LaminaPelota lamina;
 
 }
