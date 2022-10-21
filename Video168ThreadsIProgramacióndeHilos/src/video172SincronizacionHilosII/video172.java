@@ -7,21 +7,9 @@ public class video172 {
 
 		
 		hilosVarios hilo1=new hilosVarios();
-		hilosVarios hilo2=new hilosVarios();
-		hilo1.start();
-		try {
-			hilo1.join();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		hilosVarios2 hilo2=new hilosVarios2(hilo1);//esto permite por el contructor de la clase, que se empiece primero por el que pasamos como parametro
 		hilo2.start();
-		try {
-			hilo2.join();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		hilo1.start();
 		
 		
 		System.out.println("tareas terminadas");
@@ -53,9 +41,17 @@ class hilosVarios extends Thread{
 
 class hilosVarios2 extends Thread{
 	public hilosVarios2(Thread hilo) {
-		
+		this.hilo=hilo;
 	}
 	public void run() {
+		
+		try {
+			hilo.join();
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
 		for(int i=0;i<5;i++) {
 			System.out.println("Imprimiendo hilos "+ getName());
 			try {
@@ -66,4 +62,7 @@ class hilosVarios2 extends Thread{
 			}
 		}
 	}
+	
+	private Thread hilo;
+	
 }
