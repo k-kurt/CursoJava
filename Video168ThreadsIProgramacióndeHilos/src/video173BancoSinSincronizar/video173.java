@@ -5,6 +5,14 @@ public class video173 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+		banco b=new banco();
+		for(int i=0;i<100;i++) {
+			ejecucionTranferencia r=new ejecucionTranferencia(b, i, 2000);
+			Thread t=new Thread(r);
+			t.start();
+		}
+		
+		
 	}
 
 }
@@ -40,3 +48,37 @@ class banco{
 	
 	private final double[] cuentas;
 }
+
+class ejecucionTranferencia implements Runnable{
+
+	public ejecucionTranferencia(banco b,int de,double max) {
+		banco=b;
+		deLaCuenta= de;
+		cantidadMax=max;
+		
+		
+	}
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+	try {
+		while(true) {
+			int paraLaCuenta=(int)(100*Math.random());
+			double cantidad=cantidadMax*Math.random();
+			banco.tranferencia(deLaCuenta, paraLaCuenta, cantidad);
+			Thread.sleep((int)Math.random()*10);
+		}
+	}catch (InterruptedException e) {
+		// TODO: handle exception
+	}
+	}
+	
+	private banco banco;
+	private int deLaCuenta;
+	private double cantidadMax;
+	
+	
+}
+
+
