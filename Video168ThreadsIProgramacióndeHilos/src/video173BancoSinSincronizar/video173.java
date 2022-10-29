@@ -1,5 +1,7 @@
 package video173BancoSinSincronizar;
 
+import java.util.concurrent.locks.*;
+
 public class video173 {
 
 	public static void main(String[] args) {
@@ -28,6 +30,11 @@ class banco{
 	}
 	
 	public void tranferencia(int cuentaOrigen, int cuentaDestino, double cantidad) {
+		
+		cierreBanco.lock();//bloquea el hilo hasta que termine
+		
+		try {
+		
 		if(cuentas[cuentaOrigen]<cantidad) {//evalua que el saldo no sea inferior a la cantidad
 			return;
 		}
@@ -36,6 +43,10 @@ class banco{
 		System.out.printf("%10.2f de %d para %d",cantidad, cuentaOrigen,cuentaDestino);//la sentencia printf
 		cuentas[cuentaDestino]+=cantidad;
 		System.out.printf(" Saldo Total: %10.2f/n",getSaldoTotal());
+		
+	}finally {//finally es que si hay exception o no va a suceder esto si o si
+		cierreBanco.unlock();
+	}
 	}
 	
 	public double getSaldoTotal() {
@@ -47,7 +58,12 @@ class banco{
 	}
 	
 	private final double[] cuentas;
+	
+	private Lock cierreBanco=new ReentrantLock();
 }
+
+
+
 
 class ejecucionTranferencia implements Runnable{
 
