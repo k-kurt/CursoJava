@@ -2,7 +2,8 @@
 public class PrimeraClase {
 
 	public static void main(String args []) {
-		System.out.println("hoola mundo");
+		System.out.println("Hola mundo");
+    System.out.println("probando github");
 	}
 	
 }
