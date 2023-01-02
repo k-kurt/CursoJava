@@ -1,8 +1,10 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.GridLayout;
+
 import java.awt.FlowLayout;
 import java.awt.GridBagLayout;
-import java.awt.GridLayout;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -52,15 +54,15 @@ public class EventosEnCuadrosDeTextoII {
 		 
 		 usuario=new JLabel("Usuario: ");
 		 CuadroUsuario=new JTextField(50);
-		 contraseña=new JLabel("Contraseña: ");
-		 CadroContraseña=new JPasswordField(50);
-		 Document contra=CadroContraseña.getDocument();
+		 contrasena=new JLabel("Contrasena: ");
+		 CuadroContrasena=new JPasswordField(50);
+		 Document contra=CuadroContrasena.getDocument();
 		 contra.addDocumentListener(Guardar);
 		 
 		 lamina2.add(usuario);
 		 lamina2.add(CuadroUsuario);
-		 lamina2.add(contraseña);
-		 lamina2.add(CadroContraseña);
+		 lamina2.add(contrasena);
+		 lamina2.add(CuadroContrasena);
 		 
 		 
 		 
@@ -80,12 +82,12 @@ public class EventosEnCuadrosDeTextoII {
 		public void insertUpdate(DocumentEvent e) {
 			// TODO Auto-generated method stub
 			char [] contrasenia;
-			contrasenia= CadroContraseña.getPassword();
+			contrasenia= CuadroContrasena.getPassword();
 			
 			if(contrasenia.length<8 || contrasenia.length> 12) {
-				CadroContraseña.setBackground(Color.RED);
+				CuadroContrasena.setBackground(Color.RED);
 			}else {
-				CadroContraseña.setBackground(Color.WHITE);
+				CuadroContrasena.setBackground(Color.WHITE);
 			}
 		}
 
@@ -93,12 +95,12 @@ public class EventosEnCuadrosDeTextoII {
 		public void removeUpdate(DocumentEvent e) {
 			// TODO Auto-generated method stub
 			char [] contrasenia;
-			contrasenia= CadroContraseña.getPassword();
+			contrasenia= CuadroContrasena.getPassword();
 			
 			if(contrasenia.length<8 || contrasenia.length> 12) {
-				CadroContraseña.setBackground(Color.RED);
+				CuadroContrasena.setBackground(Color.RED);
 			}else {
-				CadroContraseña.setBackground(Color.WHITE);
+				CuadroContrasena.setBackground(Color.WHITE);
 			}
 		}
 
@@ -111,9 +113,9 @@ public class EventosEnCuadrosDeTextoII {
 	 }
 		 
 	 private JLabel usuario;
-	 private JLabel contraseña;
+	 private JLabel contrasena;
 	 private JTextField CuadroUsuario;
-	 private JPasswordField CadroContraseña;
+	 private JPasswordField CuadroContrasena;
 	 private JButton botonEnviar;
 	 
  }
