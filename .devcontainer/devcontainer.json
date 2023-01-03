@@ -2,9 +2,12 @@
 	"name": "Azure Functions & Java 11",
 	"dockerFile": "Dockerfile",
 	"forwardPorts": [ 7071 ],
+	
+	
 
 	// Configure tool-specific properties.
 	"customizations": {
+		
 		// Configure properties specific to VS Code.
 		"vscode": {
 			// Set *default* container specific settings.json values on container create.
@@ -29,9 +32,12 @@
 	"remoteUser": "vscode",
 	"postCreateCommand": "npm install",
 
+	
+
 	"features": {
 		"ghcr.io/devcontainers/features/java:1": {},
 		"ghcr.io/devcontainers-contrib/features/jmc-sdkman:2": {},
 		"ghcr.io/devcontainers-contrib/features/visualvm-sdkman:2": {}
+		
 	}
 }
