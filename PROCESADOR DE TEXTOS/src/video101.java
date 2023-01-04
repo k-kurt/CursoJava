@@ -46,7 +46,7 @@ class panelPrincipal extends JPanel {
 		menu = new JMenuBar();
 		fuente = new JMenu("Fuentes");
 		estilo = new JMenu("Estilos");
-		tamanio = new JMenu("Tamaño");
+		tamanio = new JMenu("Tamanio");
 		// -------------------------------------------------------------
 
 		configura_menu("Arial", "fuente", "Arial", 9, 10,"");
@@ -157,7 +157,7 @@ class panelPrincipal extends JPanel {
  * BorderLayout()); JPanel lamina2 = new JPanel(); // eventos loseventos=new
  * eventos(); // -------------------------------------------------------------
  * menu = new JMenuBar(); fuente = new JMenu("Fuentes"); estilo = new
- * JMenu("Estilos"); tamanio = new JMenu("Tamaño"); //
+ * JMenu("Estilos"); tamanio = new JMenu("Tamaï¿½o"); //
  * -------------------------------------------------------------
  * 
  * configura_menu("Arial", "fuente", "Arial", 9, 10); configura_menu("Courier",
