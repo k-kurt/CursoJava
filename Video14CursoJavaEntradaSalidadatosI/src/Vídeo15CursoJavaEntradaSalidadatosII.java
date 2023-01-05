@@ -1,6 +1,6 @@
 import javax.swing.JOptionPane;
 
-public class Vídeo15CursoJavaEntradaSalidadatosII {
+public class VÃ­deo15CursoJavaEntradaSalidadatosII {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

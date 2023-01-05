@@ -7,19 +7,19 @@ public class video18_buclewhile {
 		//crear acceso a la aplicacion
 		
 		String clave = "kevin";
-		String contraseña = "";
+		String contrasenia = "";
 		
-		while (clave.equals(contraseña)==false) {
-			contraseña = JOptionPane.showInputDialog("Ingresa la contraseña");
+		while (clave.equals(contrasenia)==false) {
+			contrasenia = JOptionPane.showInputDialog("Ingresa la contrasenia");
 			
-			if(clave.equals(contraseña)==false) {
-				System.out.println("la contraseña es incorrecta");
+			if(clave.equals(contrasenia)==false) {
+				System.out.println("la contrasenia es incorrecta");
 			}
 			
 			
 		}
 		
-		System.out.println("la contraseña es correcta, ya puedes ingresar");
+		System.out.println("la contrasenia es correcta, ya puedes ingresar");
 		
 	}
 

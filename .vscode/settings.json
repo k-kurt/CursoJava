@@ -4,5 +4,6 @@
         "sun.*",
         "org.graalvm.*",
         "io.micrometer.shaded.*"
-    ]
+    ],
+    "editor.mouseWheelZoom": true
 }
