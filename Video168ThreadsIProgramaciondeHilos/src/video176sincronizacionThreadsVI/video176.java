@@ -27,22 +27,35 @@ class banco{
 			cuentas[i]=2000;//cargamos cada elemento i del array cuentas con 2000
 		}
 		
+		saldoSuficiente=cierreBanco.newCondition();
+		
+
+
 	}
 	
-	public void tranferencia(int cuentaOrigen, int cuentaDestino, double cantidad) {
+	public void tranferencia(int cuentaOrigen, int cuentaDestino, double cantidad) throws InterruptedException {
 		
 		cierreBanco.lock();//bloquea el hilo hasta que termine
 		
 		try {
 		
-		if(cuentas[cuentaOrigen]<cantidad) {//evalua que el saldo no sea inferior a la cantidad
+			while (cuentas[cuentaOrigen]<cantidad) {
+
+				saldoSuficiente.await();
+				
+			}
+
+
+
+
+		/*if(cuentas[cuentaOrigen]<cantidad) {//evalua que el saldo no sea inferior a la cantidad
 			
 			System.out.println("----------------------TRANSFERENCIA CANCELADA---CUENTA: "+cuentaOrigen+"----SALDO: "+ cuentas[cuentaOrigen]+"-----"+"-----a trasferir: "+ cantidad);
 			
 			return;
 		}else {
 			System.out.println("-------------CANTIDAD OK-----");
-		}
+		}*/
 		
 		System.out.println(Thread.currentThread());//sentencia que nos indica que thread se esta ejecutando
 		cuentas[cuentaOrigen]-=cantidad;//restamos la cantidad de la tranferencia
@@ -70,6 +83,9 @@ class banco{
 	private final double[] cuentas;
 	
 	private Lock cierreBanco=new ReentrantLock();
+
+	private Condition saldoSuficiente;
+
 }
 
 
