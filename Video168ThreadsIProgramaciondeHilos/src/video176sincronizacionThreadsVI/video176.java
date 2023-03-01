@@ -28,8 +28,6 @@ class banco{
 		}
 		
 		saldoSuficiente=cierreBanco.newCondition();
-		
-
 
 	}
 	
@@ -44,9 +42,6 @@ class banco{
 				saldoSuficiente.await();
 				
 			}
-
-
-
 
 		/*if(cuentas[cuentaOrigen]<cantidad) {//evalua que el saldo no sea inferior a la cantidad
 			
@@ -66,6 +61,7 @@ class banco{
 		System.out.println("----cuenta origen: "+cuentaOrigen+"---saldo de cuenta origen: "+cuentas[cuentaOrigen]+ "---------cuentaDEstino: "+cuentaDestino+"--saldo: "+cuentas[cuentaDestino]);
 		System.out.println("------------------------------------------------------------------------------------------------------------------");
 		
+		saldoSuficiente.signalAll();
 		
 	}finally {//finally es que si hay exception o no va a suceder esto si o si
 		cierreBanco.unlock();
