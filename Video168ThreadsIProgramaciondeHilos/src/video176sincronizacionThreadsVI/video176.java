@@ -39,7 +39,8 @@ class banco{
 		
 			while (cuentas[cuentaOrigen]<cantidad) {
 
-				saldoSuficiente.await();
+				saldoSuficiente.await();//metodo que sirve para poner a la espera a un hilo esperando a que termine el hilo
+				//anterior siempre y cuando se cumpla una condicion
 				
 			}
 
@@ -61,7 +62,8 @@ class banco{
 		System.out.println("----cuenta origen: "+cuentaOrigen+"---saldo de cuenta origen: "+cuentas[cuentaOrigen]+ "---------cuentaDEstino: "+cuentaDestino+"--saldo: "+cuentas[cuentaDestino]);
 		System.out.println("------------------------------------------------------------------------------------------------------------------");
 		
-		saldoSuficiente.signalAll();
+		saldoSuficiente.signalAll();//metodo que permite despertar el bloque de codigo bloqueado y avisar a los hilos que 
+		//revisen la condicion
 		
 	}finally {//finally es que si hay exception o no va a suceder esto si o si
 		cierreBanco.unlock();

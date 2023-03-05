@@ -2,6 +2,17 @@ package video178SincronizacionThreadsVIII;
 
 import java.util.concurrent.locks.*;
 
+
+
+/**podmos usar los dos metodos vistos pero uno solo funciona con u asola condicion que es el metodo synchronized en cambio con el otro metodo
+se puede establecer varias condiciones de bloqueos
+**/
+
+
+
+
+
+
 public class video178 {
 
 	public static void main(String[] args) {
@@ -27,20 +38,24 @@ class banco{
 			cuentas[i]=2000;//cargamos cada elemento i del array cuentas con 2000
 		}
 		
-		saldoSuficiente=cierreBanco.newCondition();
+		//saldoSuficiente=cierreBanco.newCondition();  //borrado por el metodo synchronized
 
 	}
 	
-	public void tranferencia(int cuentaOrigen, int cuentaDestino, double cantidad) throws InterruptedException {
+
+	//metodo synchronized que permite borrar los bloqueos
+	public synchronized void tranferencia(int cuentaOrigen, int cuentaDestino, double cantidad) throws InterruptedException {
 		
-		cierreBanco.lock();//bloquea el hilo hasta que termine
+		//cierreBanco.lock();//bloquea el hilo hasta que termine		//borrado por el metodo synchronized
 		
-		try {
+		//try {		//borrado por el metodo synchronized
 		
 			while (cuentas[cuentaOrigen]<cantidad) {
 
-				saldoSuficiente.await();
+				//saldoSuficiente.await(); 			//borrado por el metodo synchronized
 				
+				wait();//reemplaza al metodo await()
+
 			}
 
 		/*if(cuentas[cuentaOrigen]<cantidad) {//evalua que el saldo no sea inferior a la cantidad
@@ -61,12 +76,15 @@ class banco{
 		System.out.println("----cuenta origen: "+cuentaOrigen+"---saldo de cuenta origen: "+cuentas[cuentaOrigen]+ "---------cuentaDEstino: "+cuentaDestino+"--saldo: "+cuentas[cuentaDestino]);
 		System.out.println("------------------------------------------------------------------------------------------------------------------");
 		
-		saldoSuficiente.signalAll();
+		//saldoSuficiente.signalAll();			//borrado por el metodo synchronized
+
+		notifyAll();// reemplaza al metodo signalAll()
+
 		
-	}finally {//finally es que si hay exception o no va a suceder esto si o si
-		cierreBanco.unlock();
-	}
-	}
+	}//finally {//finally es que si hay exception o no va a suceder esto si o si		//borrado por el metodo synchronized
+		//cierreBanco.unlock();			//borrado por el metodo synchronized
+	//}			//borrado por el metodo synchronized
+	//}			//borrado por el metodo synchronized
 	
 	public double getSaldoTotal() {
 		double suma_cuentas=0;
@@ -78,9 +96,9 @@ class banco{
 	
 	private final double[] cuentas;
 	
-	private Lock cierreBanco=new ReentrantLock();
+	//private Lock cierreBanco=new ReentrantLock();		//borrado por el metodo synchronized
 
-	private Condition saldoSuficiente;
+	//private Condition saldoSuficiente;		//borrado por el metodo synchronized
 
 }
 
