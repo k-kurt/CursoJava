@@ -1,0 +1,44 @@
+Una coleccion es un almacen dinamico a diferencia de un array es estatico
+una coleccion puede cambiar de tamanio durante la ejecucion del programa
+
+ventajas de coleccion:
+-pueden cambiar de tamanio
+-pueden ir provistas de ordenamiento
+-se puede insertar y eliminar elementos
+
+deventajas:
+-no puede alamacenar datos primitivos como un array
+
+las colecciones son siempre para alamcenar objetos
+
+de la interface COLECCTION se encuentran las subinterfaces 
+ SET-->SortedSet 
+ set permite almacenar una coleccion de elementos no repetidos y sin ordenar
+
+ LIST 
+es una coleccion de elementos que estan repetido y estan idexados 
+
+ QUEVE
+es una cola que no permite acceder de forma aleatoria y solo se permite acceder al comienzo de la cola o al final o a ambos
+
+ ----
+
+ MAP-->SortedMap
+ la interface MAP permite crear una coleccion de elementos repetibles idexados por claves unicas arbitrarias(no necesariamente 1,2,3,4)
+
+
+ si no se necesita repetir elementos es mas eficiente utilizar un set ya que accede mas rapido al elemento que utilizar un LIST
+ el list permite acceder a un elemento de forma aleatoria 
+ cuanto mas funciones trae una coleccion por lo general seria mas lenta la ejecucion 
+
+Si queremos utilizar estas interfaces, tenemos que implementar las clases 
+
+
+---------------------------------------------------------------------------------------------------
+CLASES UTILIZADAS CON LIST
+ArrayList
+-muy rapida accediendo a elementos 
+-se adapta a un gran numero de escenarios
+LinkedList
+-listas enlazadas
+-gran eficiencia agregando y eliminando elementos
