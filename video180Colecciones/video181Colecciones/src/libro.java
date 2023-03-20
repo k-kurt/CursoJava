@@ -1,6 +1,6 @@
-public class libro {
+public class Libro {
 
-    public libro(String titulo,String autor, int ISBN){
+    public Libro(String titulo,String autor, int ISBN){
 
     }
     
