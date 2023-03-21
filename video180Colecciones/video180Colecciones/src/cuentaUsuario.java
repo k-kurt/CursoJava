@@ -10,6 +10,8 @@ import java.util.*;
         cliente cl4=new cliente("pajarito", "00004", 180000);
         cliente cl5=new cliente("pajarito", "00004", 180000);
 
+        /* no agrega al ultimo por que utilizamos el equal y el hascode para diferenciar los usuarios por n de cuenta */
+
 
         Set <cliente> cuentaUsuario=new HashSet<cliente>();
             /* esto es programacion generica */
