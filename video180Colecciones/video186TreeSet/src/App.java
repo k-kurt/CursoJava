@@ -66,4 +66,6 @@ class Articulo implements Comparable<Articulo>{
  * no tienen acceso aleatorios
  * poca eficiencia a la hra de ordenar elementos ( y no siempre se puede)
  * ordena alfabeticamente 
+ * 
+ * video 186 terminado, me equivoque en el commit
  */
