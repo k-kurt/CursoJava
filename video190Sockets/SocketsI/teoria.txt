@@ -1,0 +1,23 @@
+Los sockets en ajava nos permite crear aplicaciones cliente/servidor
+una aplicacion  asi nos permite mover informacion de un ordernador cliente a un ordenador remoto, un ordenador servidor
+Un sicket es una especie de puente virtual que va a comunicar esos dos ordenadores, va a trasladar los paquete de informacion
+
+
+como funciona
+    creamos 2 aplicaciones, por un lado la aplicacion cliente y por otro la aplicacion servidor
+    y comunicarlas desde el sockets
+
+    la aplicacion cliente va a estar en nuestro ordenador, y la aplicacion servidor a nuestro servidor
+
+    sockets:
+        direccion del servidor
+        puerto de recepcion
+
+
+    aplicacion cliente:
+        OutputStream
+
+    aplicacion servidor:
+        InputStream
+
+
