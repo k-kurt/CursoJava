@@ -1,6 +1,8 @@
 
 import java.awt.event.*;
+import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
@@ -67,8 +69,23 @@ class LaminaMarcoCliente extends JPanel{
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 			//System.out.println(campo1.getText());
-				try {Socket miSoclet= new Socket("192.168.1.3",9999);
+
 			
+			//la excepcion es necesario para la clase
+			
+				try {
+					
+					Socket miSoclet= new Socket("192.168.1.3",9999);
+			
+					//creamos un campo de flujo de datos e indicar por donde va a circular(el socket), enviamos por el socket los datos
+					DataOutputStream flujo_salida=new DataOutputStream(miSoclet.getOutputStream());
+					//guardamos el texto en el flujo de salida
+					flujo_salida.writeUTF(campo1.getText());
+					//hay que cerrar el flujo de salida
+					flujo_salida.close();
+
+
+				
 		} catch (UnknownHostException e1) {
 
 			// TODO: handle exception
