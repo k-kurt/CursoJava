@@ -1,0 +1,17 @@
+Para no complicar tanto el codigo y que no sea tan largo, vamos a crear un objeto y enviarlo
+para que el receptor se encargue de desmenusar ese objeto
+
+---------consigna 1
+creamos un clase para enviar ese paquete
+creamos los getters y setters
+
+crear un codigo lo que podamos almacenar lo que escribamos en el textField y almacenarlo en el campo nick
+lo mismo con la ip
+lo mismo para el campo1 donde va el mensaje
+
+para rescatar la informacion utilizaremos los getters
+
+---------consigna 2
+instanciamos la clase creada para empaquetar los datos, le asignamos con los getters de los campos de texto y le seteamos 
+a la clase instanciada esos valores
+
