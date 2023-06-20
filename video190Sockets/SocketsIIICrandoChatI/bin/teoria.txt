@@ -15,3 +15,42 @@ para rescatar la informacion utilizaremos los getters
 instanciamos la clase creada para empaquetar los datos, le asignamos con los getters de los campos de texto y le seteamos 
 a la clase instanciada esos valores
 
+
+
+
+---------------Video 193-----------------------------
+
+
+---------consigna 3
+crear el flujo de datos con objectOutputStram
+hay que enviar ese paquete por la red
+usamos el objectOutputStram para enviar esa informacion empaqueta en un objeto
+seguimos usando el mismo socket para enviar como parametro del ObjectOut.. los datos
+
+escribimos en el flujo de datos con los metodos de ese objectOutputStram, para poder enviar esos datos
+
+---------consigna 4
+hacer la serializacion
+
+hay que serializar la clase que se encarga de los paquete de datos, hay que implmentar la clase Serializable
+
+
+---------consigna 5
+
+en la aplicacion servidor hay que hacer los cambios para aceptar los datos de cliente
+
+En el thread 
+necesitamos crear varibles para guardar los datos que fueron enviados
+tenemos que crear una instancia de la clase que envia los datos para guardar esos datos
+
+    como vinimos haciendo, tenemos que crear ahora un flujo de datos de entrada
+    con la clase Object como lo hicimos a lo ultimo en la clase cliente
+
+tambien hay que crear la varible para guardar el objeto(leyendo el objeto del flujo de datos), instanciando la clase del paquete objetos
+para luego con los getters asignar  con los valores guardados en esa varible
+mostramos los datos en el areatext del servidor para ver si funciona
+
+tenemos que crear una variable instanciando la clase(paquete_recibido) que envia los datos, una vez creada, tenemos que guardar en ella,
+los datos enviados desde el flujo de datos(paquete_datos), esta viene en paquete, en un objeto, entonces en esta variable instanciada, leemos el
+objecto desde el flujo de datos(paquete_recibido= (PaquetEnvio) paquete_datos.readObject();), haciendo un cast por que uno es objeto(ObjectinputStream) y el otro no,
+es una instacia de paqueteEnvio. Son objetos de distintos tipos 

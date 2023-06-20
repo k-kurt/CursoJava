@@ -5,6 +5,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.DataInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -54,12 +55,23 @@ class MarcoServidor extends JFrame implements Runnable{
 	
 
 		try {
+
+			 String nick, ip, mensaje;
+
+			EnvioPaquetes paquete_recibido;
+
+
 			//ponemos a la escucha a la aplicacion con el puerto 9999  
 			ServerSocket server=new ServerSocket(9999);
 			//en un bucle infinito para poder abrir el puerto y aceptar la tranferencia de paquetes			
 			while(true){
 			Socket miServer=server.accept();
+				//creamos el flujo de datos
+			ObjectInputStream flujoDatosEntrada=new ObjectInputStream(miServer.getInputStream());
+				//
+			
 
+			/*
 			//creamos el flujo de datos, el socket ya esta creado
 			DataInputStream miInput= new DataInputStream(miServer.getInputStream());
 			//guardamos en un string el texto  escrito en el cliente
@@ -67,6 +79,7 @@ class MarcoServidor extends JFrame implements Runnable{
 			//lo pegamos en el campo de texto del servidor
 			areatexto.append("\n"+text_mensaje);
 			miServer.close();
+			 */
 			}
 		} catch (IOException e) {
 			e.printStackTrace();

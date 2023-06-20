@@ -2,7 +2,7 @@
 import java.awt.event.*;
 import java.io.DataOutputStream;
 import java.io.IOException;
-
+import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
@@ -90,6 +90,14 @@ class LaminaMarcoCliente extends JPanel {
 				paqueteDatos.setNick(nick.getText());
 				paqueteDatos.setIp(ip.getText());
 				paqueteDatos.setMensaje(campo1.getText());
+
+
+				//consigna 3
+
+				ObjectOutputStream flujoDeDatos=new ObjectOutputStream(miSoclet.getOutputStream());//creamos el flujo
+				flujoDeDatos.writeObject(paqueteDatos);//asiganamos el objecto al flujo de datos
+				flujoDeDatos.close();
+
 
 
 				/* 
