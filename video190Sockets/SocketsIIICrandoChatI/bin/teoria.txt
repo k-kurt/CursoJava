@@ -41,7 +41,7 @@ en la aplicacion servidor hay que hacer los cambios para aceptar los datos de cl
 
 En el thread 
 necesitamos crear varibles para guardar los datos que fueron enviados
-tenemos que crear una instancia de la clase que envia los datos para guardar esos datos
+tenemos que crear una instancia de la clase que envia los datos para guardar esos datos`
 
     como vinimos haciendo, tenemos que crear ahora un flujo de datos de entrada
     con la clase Object como lo hicimos a lo ultimo en la clase cliente
@@ -53,4 +53,4 @@ mostramos los datos en el areatext del servidor para ver si funciona
 tenemos que crear una variable instanciando la clase(paquete_recibido) que envia los datos, una vez creada, tenemos que guardar en ella,
 los datos enviados desde el flujo de datos(paquete_datos), esta viene en paquete, en un objeto, entonces en esta variable instanciada, leemos el
 objecto desde el flujo de datos(paquete_recibido= (PaquetEnvio) paquete_datos.readObject();), haciendo un cast por que uno es objeto(ObjectinputStream) y el otro no,
-es una instacia de paqueteEnvio. Son objetos de distintos tipos 
+es una instacia de paqueteEnvio. Son objetos de distintos tipos. hay que agregar la excepcion

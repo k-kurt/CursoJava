@@ -3,6 +3,7 @@ import java.awt.event.*;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
@@ -136,7 +137,7 @@ class LaminaMarcoCliente extends JPanel {
 
 	//consigna1
 
-class EnvioPaquetes {
+class EnvioPaquetes implements Serializable{
 	private String nick, ip, mensaje;
 
 	public String getNick() {

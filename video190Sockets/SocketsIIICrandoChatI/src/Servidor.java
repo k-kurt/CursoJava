@@ -61,15 +61,21 @@ class MarcoServidor extends JFrame implements Runnable{
 			EnvioPaquetes paquete_recibido;
 
 
-			//ponemos a la escucha a la aplicacion con el puerto 9999  
+				//ponemos a la escucha a la aplicacion con el puerto 9999  
 			ServerSocket server=new ServerSocket(9999);
-			//en un bucle infinito para poder abrir el puerto y aceptar la tranferencia de paquetes			
+				//en un bucle infinito para poder abrir el puerto y aceptar la tranferencia de paquetes			
 			while(true){
 			Socket miServer=server.accept();
 				//creamos el flujo de datos
 			ObjectInputStream flujoDatosEntrada=new ObjectInputStream(miServer.getInputStream());
-				//
-			
+				//guardamos el objecto en la variable instanciada de la clase Enviopaquetes
+			paquete_recibido=(EnvioPaquetes) flujoDatosEntrada.readObject();
+				//agregamos los datos a las variables
+			nick=paquete_recibido.getNick();
+			ip=paquete_recibido.getIp();
+			mensaje=paquete_recibido.getMensaje();
+				//mostramos en el textarea los datos
+			areatexto.append("\n"+nick+": "+ mensaje+" para: "+ ip );
 
 			/*
 			//creamos el flujo de datos, el socket ya esta creado
@@ -81,7 +87,7 @@ class MarcoServidor extends JFrame implements Runnable{
 			miServer.close();
 			 */
 			}
-		} catch (IOException e) {
+		} catch (IOException | ClassNotFoundException e) {
 			e.printStackTrace();
 		
 		}
