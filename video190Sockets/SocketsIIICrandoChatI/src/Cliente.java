@@ -2,8 +2,10 @@
 import java.awt.event.*;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
@@ -37,7 +39,7 @@ class MarcoCliente extends JFrame {
 
 }
 
-class LaminaMarcoCliente extends JPanel {
+class LaminaMarcoCliente extends JPanel implements Runnable{
 
 	public LaminaMarcoCliente() {
 
@@ -69,8 +71,58 @@ class LaminaMarcoCliente extends JPanel {
 		miboton.addActionListener(enviarTexto);
 
 		add(miboton);
+                
+                Thread miHilo=new Thread(this);
+                miHilo.start();
 
 	}
+
+    
+        
+        
+        
+        @Override
+    public void run() {
+            try {
+                
+                ServerSocket Servidor_cliente=new ServerSocket(9090);//tiene que ser el mismo puerto donde dijimos que iba a llegar
+                
+                Socket cliente;
+                
+                EnvioPaquetes paqueteRecibido;
+                
+                while(true){
+                    cliente=Servidor_cliente.accept();
+                    
+                    ObjectInputStream flujoentrada=new ObjectInputStream(cliente.getInputStream());
+                    
+                    paqueteRecibido=(EnvioPaquetes) flujoentrada.readObject();
+                    
+                    campoChat.append("\n"+paqueteRecibido.getNick()+ ": "+ paqueteRecibido.getMensaje());
+                    
+                }
+                
+                
+                
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 	private class EnviaTexto implements ActionListener {
 
@@ -83,9 +135,8 @@ class LaminaMarcoCliente extends JPanel {
 
 			try {
 
-				Socket miSoclet = new Socket("192.168.1.3", 9999);
-				
-
+				Socket miSoclet = new Socket("192.168.1.6", 9999);//tengo que ver que IP tengo en ese momento
+                              
 				//consigna2
 				EnvioPaquetes paqueteDatos=new EnvioPaquetes();
 				paqueteDatos.setNick(nick.getText());
@@ -97,7 +148,7 @@ class LaminaMarcoCliente extends JPanel {
 
 				ObjectOutputStream flujoDeDatos=new ObjectOutputStream(miSoclet.getOutputStream());//creamos el flujo
 				flujoDeDatos.writeObject(paqueteDatos);//asiganamos el objecto al flujo de datos
-				flujoDeDatos.close();
+				miSoclet.close();
 
 
 
