@@ -82,7 +82,8 @@ class MarcoServidor extends JFrame implements Runnable {
                 
                 enviaDestinatario.close();//cerramos el socket
                 
-
+                paqueteReenvio.close();//cerramos el socket
+                
                 miServer.close();
 
                 /*
